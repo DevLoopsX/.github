@@ -9,7 +9,7 @@
 ---
 
 ## <span id="tên-dự-án-và-chủ-đề" style="color:red;">🚀 Tên dự án và lý do lựa chọn dự án</span>
-**Ý nghĩa tên Swiftera**: Kết hợp giữa “Swift” (nhanh như chớp) và “Era” (kỷ nguyên, thời đại) thể hiện đây là nền tảng thương mại điện tử với một kỷ nguyên mua sắm siêu tốc, nơi mọi giao dịch diễn ra nhanh nhẹn, tiện lợi, giá cả phải chăng và dễ sử dụng.
+**Ý nghĩa tên Swiftera**: Kết hợp giữa “Swift” (nhanh như chớp) và “Era” (kỷ nguyên, thời đại) thể hiện đây là nền tảng thương mại điện tử với một kỷ nguyên mua sắm siêu tốc, nơi mọi giao dịch diễn ra nhanh chóng, tiện lợi, giá cả phải chăng và dễ sử dụng.
 
 **Lý do lựa chọn dự án**:  
 
