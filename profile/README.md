@@ -19,9 +19,68 @@
 ---
 
 ## <span id="công-nghệ-sử-dụng" style="color:red;">🛠️ Công nghệ sử dụng</span>
-- **Front-end**: React.js, Redux Toolkit (RTK quản lý local state), React Query (quản lý remote state), Tailwind CSS (+shadcn/ui), Axios, TypeScript, Socket.IO (chat real time).
-- **Back-end**: Java Core 21, Spring Ecosystem (Spring Boot 3, Spring Security, Spring Data/JPA), MySQL, Maven, Socket.IO (chat real time).
-- **Others**: AWS (EC2, RDS, S3), Git & GitHub, GitHub Actions (CI/CD).
+
+Dư án **Swiftera** sử dụng công nghệ từ Front-end, Back-end đến các công cụ khác để triển khai và CI/CD.
+
+<details open>
+<summary><strong>💻 Front-end</strong></summary>
+<br>
+
+- **React.js**:  
+  ![ReactJS](https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react)
+
+- **Redux Toolkit (RTK)** & **React Query**:  
+  ![Redux Toolkit](https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB)  
+  ![React Query](https://img.shields.io/badge/-React_Query-000?style=for-the-badge&logo=reactquery)
+
+- **Tailwind CSS (+ shadcn/ui)**:  
+  ![Tailwind CSS](https://img.shields.io/badge/-Tailwind_CSS-000?style=for-the-badge&logo=tailwindcss)
+
+- **Axios & TypeScript**:  
+  ![Axios](https://img.shields.io/badge/-Axios-000?style=for-the-badge&logo=axios)  
+  ![TypeScript](https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript)
+
+- **Socket.IO (chat real time)**:  
+  ![Socket.io](https://img.shields.io/badge/-Socket.io-000?style=for-the-badge&logo=socket.io)
+
+</details>
+
+<details open>
+<summary><strong>⚙️ Back-end</strong></summary>
+<br>
+
+- **Java Core 21**:  
+  ![Java](https://img.shields.io/badge/-Java-000?style=for-the-badge&logo=openjdk)
+
+- **Spring Ecosystem (Spring Boot 3, Spring Security, Spring Data/JPA)**:  
+  ![Spring Boot](https://img.shields.io/badge/-Spring_Boot-000?style=for-the-badge&logo=springboot)  
+  ![Spring Security](https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity)  
+  ![Spring Data JPA](https://img.shields.io/badge/-Spring_Data_JPA-000?style=for-the-badge&logo=spring)
+
+- **MySQL & Maven**:  
+  ![MySQL](https://img.shields.io/badge/-MySQL-000?style=for-the-badge&logo=mysql)  
+  ![Maven](https://img.shields.io/badge/-Maven-000?style=for-the-badge&logo=apachemaven)
+
+- **Socket.IO (chat real time)**:  
+  ![Socket.io](https://img.shields.io/badge/-Socket.io-000?style=for-the-badge&logo=socket.io)
+
+</details>
+
+<details open>
+<summary><strong>☁️ Others</strong></summary>
+<br>
+
+- **AWS (EC2, RDS, S3)**:  
+  ![AWS](https://img.shields.io/badge/-AWS_(EC2_RDS_S3)-000?style=for-the-badge&logo=amazonaws)
+
+- **Git & GitHub**:  
+  ![Git](https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git)
+  ![GitHub](https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github)
+
+- **GitHub Actions (CI/CD)**:  
+  ![GitHub Actions](https://img.shields.io/badge/-GitHub_Actions-000?style=for-the-badge&logo=githubactions)
+
+</details>
 
 ---
 
