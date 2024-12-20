@@ -25,8 +25,10 @@
 
 Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, Back-end đến các công cụ khác.
 
-### **Front-end**
-<div align="left" style="margin-bottom: 15px; margin-right: 12px">
+---
+
+### <span style="font-size:18px;">✨ Front-end</span>
+<div align="left" style="margin: 15px 0 20px 0">
   <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS"/>
   <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit"/>
   <img src="https://img.shields.io/badge/-React_Query-000?style=for-the-badge&logo=reactquery" alt="React Query"/>
@@ -36,8 +38,10 @@ Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, 
   <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO"/>
 </div>
 
-### **Back-end**
-<div align="left" style="margin-bottom: 15px; margin-right: 12px">
+---
+
+### <span style="font-size:18px;">🔧 Back-end</span>
+<div align="left" style="margin: 15px 0 20px 0">
   <img src="https://img.shields.io/badge/-Java_Core_21-000?style=for-the-badge&logo=openjdk" alt="Java Core"/>
   <img src="https://img.shields.io/badge/-Spring_Boot_3-000?style=for-the-badge&logo=springboot" alt="Spring Boot"/>
   <img src="https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity" alt="Spring Security"/>
@@ -47,8 +51,10 @@ Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, 
   <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO"/>
 </div>
 
-### **Others**
-<div align="left" style="margin-bottom: 15px; margin-right: 12px">
+---
+
+### <span style="font-size:18px;">🌐 Others</span>
+<div align="left" style="margin: 15px 0 20px 0">
   <img src="https://img.shields.io/badge/-AWS_(EC2_RDS_S3)-000?style=for-the-badge&logo=AmazonWebServices" alt="AWS"/>
   <img src="https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git" alt="Git"/>
   <img src="https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github" alt="GitHub"/>
