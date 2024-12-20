@@ -29,11 +29,11 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 
 ### <span style="font-size:18px;">✨ Front-end</span>
 <div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap;">
+  <img src="https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript" alt="TypeScript" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-React_Query-000?style=for-the-badge&logo=reactquery" alt="React Query" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Tailwind_CSS-000?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" style="margin-right: 19px; margin-bottom: 12px;"/>
-  <img src="https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript" alt="TypeScript" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO" style="margin-right: 19px; margin-bottom: 12px;"/>
 </div>
 
