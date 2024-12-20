@@ -29,13 +29,13 @@ Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, 
 
 ### <span style="font-size:18px;">✨ Front-end</span>
 <div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap; gap: 15px;">
+  <img src="https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript" alt="TypeScript"/>
   <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS"/>
   <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit"/>
   <img src="https://img.shields.io/badge/-React_Query-000?style=for-the-badge&logo=reactquery" alt="React Query"/>
   <img src="https://img.shields.io/badge/-Tailwind_CSS-000?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS"/>
-  <img src="https://img.shields.io/badge/-Axios-000?style=for-the-badge&logo=axios" alt="Axios"/>
-  <img src="https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript" alt="TypeScript"/>
   <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO"/>
+  <img src="https://img.shields.io/badge/-Axios-000?style=for-the-badge&logo=axios" alt="Axios"/>
 </div>
 
 ---
