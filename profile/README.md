@@ -28,7 +28,7 @@ Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, 
 ---
 
 ### <span style="font-size:18px;">✨ Front-end</span>
-<div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap; gap: 19px;">
+<div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap; gap: 100px;">
   <img src="https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript" alt="TypeScript"/>
   <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS"/>
   <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit"/>
