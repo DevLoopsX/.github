@@ -1,55 +1,43 @@
-# <span style="color:#e74c3c;">🌐 Swiftera Project (E-commerce)</span>
+# <span style="color:red;">🌐 Swiftera Project (E-commerce)</span>
 
-## <span style="color:#e74c3c;">📚 Mục lục</span>
-- [<span style="color:#e74c3c;">Tên dự án và chủ đề</span>](#tên-dự-án-và-chủ-đề)
-- [<span style="color:#e74c3c;">Công nghệ sử dụng</span>](#công-nghệ-sử-dụng)
-- [<span style="color:#e74c3c;">Lấy ý tưởng dự án</span>](#lấy-ý-tưởng-dự-án)
-- [<span style="color:#e74c3c;">Nguyên tắc làm việc</span>](#nguyên-tắc-làm-việc)
+## <span style="color:red;">📚 Mục lục</span>
+- [<span style="color:red;">Tên dự án và chủ đề</span>](#tên-dự-án-và-chủ-đề)
+- [<span style="color:red;">Công nghệ sử dụng</span>](#công-nghệ-sử-dụng)
+- [<span style="color:red;">Lấy ý tưởng dự án</span>](#lấy-ý-tưởng-dự-án)
+- [<span style="color:red;">Nguyên tắc làm việc</span>](#nguyên-tắc-làm-việc)
 
 ---
 
-## <span id="tên-dự-án-và-chủ-đề" style="color:#e74c3c;">🚀 Tên dự án và lý do lựa chọn dự án</span>
-**Ý nghĩa tên Swiftera**:  
-Kết hợp giữa **“Swift”** (nhanh như chớp) và **“Era”** (kỷ nguyên), thể hiện đây là nền tảng thương mại điện tử tạo nên một **kỷ nguyên mua sắm siêu tốc**, nơi mọi giao dịch diễn ra nhanh nhẹn, tiện lợi, giá cả phải chăng và dễ sử dụng.
+## <span id="tên-dự-án-và-chủ-đề" style="color:red;">🚀 Tên dự án và lý do lựa chọn dự án</span>
+**Ý nghĩa tên Swiftera**: Kết hợp giữa “Swift” (nhanh như chớp) và “Era” (kỷ nguyên, thời đại) thể hiện đây là nền tảng thương mại điện tử với một kỷ nguyên mua sắm siêu tốc, nơi mọi giao dịch diễn ra nhanh nhẹn, tiện lợi, giá cả phải chăng và dễ sử dụng.
 
 **Lý do lựa chọn dự án**:  
-1. **Kinh nghiệm chuyên môn**: Nhiều công ty yêu cầu ứng viên có kinh nghiệm làm E-commerce, dự án này giúp nâng cao profile.  
-2. **Tham khảo phong phú**: Giao diện, tính năng có thể học hỏi từ Shopee, Lazada, Tiki, Amazon.  
-3. **Chủ đề phổ biến**: Dễ học nhiều tính năng hữu ích (giỏ hàng, thanh toán, chat,...), áp dụng cho nhiều dự án sau này.
+1. Một số công ty sẽ yêu cầu ứng viên có kinh nghiệm trong việc xây dựng website về thương mại điện tử nên làm chủ đề này có thể giúp điền vào profile.  
+2. Có nhiều website mẫu để tham khảo về giao diện, tính năng,... như Shopee, Lazada, Tiki, Amazon.  
+3. Chủ đề phổ biến và có rất nhiều tính năng nên học được nhiều và tăng kinh nghiệm làm dự án. Có nhiều tính năng phổ biến như: quản lý sản phẩm vào giỏ hàng, đặt hàng, thanh toán,... có thể sử dụng ở nhiều dự án khác không chỉ riêng e-commerce.
 
 ---
 
-## <span id="công-nghệ-sử-dụng" style="color:#e74c3c;">🛠️ Công nghệ sử dụng</span>
-- **Front-end**:  
-  - <span style="color:#2980b9;">React.js</span>, <span style="color:#2980b9;">Redux Toolkit (RTK)</span>, <span style="color:#2980b9;">React Query</span>,  
-    <span style="color:#2980b9;">Tailwind CSS (+shadcn/ui)</span>, <span style="color:#2980b9;">Axios</span>,  
-    <span style="color:#2980b9;">TypeScript</span>, <span style="color:#2980b9;">Socket.IO</span> (chat real-time)
-  
-- **Back-end**:  
-  - <span style="color:#27ae60;">Java Core 21</span>, <span style="color:#27ae60;">Spring Boot 3</span>,  
-    <span style="color:#27ae60;">Spring Security</span>, <span style="color:#27ae60;">Spring Data/JPA</span>,  
-    <span style="color:#27ae60;">MySQL</span>, <span style="color:#27ae60;">Maven</span>,  
-    <span style="color:#27ae60;">Socket.IO</span> (chat real-time)
-  
-- **Others**:  
-  - <span style="color:#8e44ad;">AWS (EC2, RDS, S3)</span>, <span style="color:#8e44ad;">Git & GitHub</span>,  
-    <span style="color:#8e44ad;">GitHub Actions (CI/CD)</span>
+## <span id="công-nghệ-sử-dụng" style="color:red;">🛠️ Công nghệ sử dụng</span>
+- **Front-end**: React.js, Redux Toolkit (RTK quản lý local state), React Query (quản lý remote state), Tailwind CSS (+shadcn/ui), Axios, TypeScript, Socket.IO (chat real time).
+- **Back-end**: Java Core 21, Spring Ecosystem (Spring Boot 3, Spring Security, Spring Data/JPA), MySQL, Maven, Socket.IO (chat real time).
+- **Others**: AWS (EC2, RDS, S3), Git & GitHub, GitHub Actions (CI/CD).
 
 ---
 
-## <span id="lấy-ý-tưởng-dự-án" style="color:#e74c3c;">💡 Lấy ý tưởng dự án</span>
-### <span style="color:#3498db;">Các tính năng chính:</span>
+## <span id="lấy-ý-tưởng-dự-án" style="color:red;">💡 Lấy ý tưởng dự án</span>
+### <span style="color:blue;">Các tính năng chính:</span>
 - **Đăng ký, đăng nhập, đăng xuất tài khoản người dùng**.
-- **Chat tin nhắn thời gian thực giữa người bán và người mua**:
+- **Chat tin nhắn thời gian thực giữa người bán và người mua về sản phẩm**:
   - Tin nhắn văn bản.
   - Hỗ trợ Emoji.
   - Upload file: hình ảnh, video (<= 5MB).
 
 ---
 
-## <span id="nguyên-tắc-làm-việc" style="color:#e74c3c;">📏 Nguyên tắc làm việc</span>
+## <span id="nguyên-tắc-làm-việc" style="color:red;">📏 Nguyên tắc làm việc</span>
 
-> ### <span style="color:#3498db;">🟢 Commit Convention (Quy ước commit)</span>
+> ### <span style="color:blue;">🟢 Commit Convention (Quy ước khi commit code lên GitHub):</span>
 > ```
 > feat:      thêm một feature mới
 > fix:       sửa lỗi trong hệ thống
@@ -61,17 +49,16 @@ Kết hợp giữa **“Swift”** (nhanh như chớp) và **“Era”** (kỷ n
 > vendor:    cập nhật phiên bản dependencies, packages
 > ```
 
-> ### <span style="color:#3498db;">🔵 Branch Naming Conventions (Quy ước tên nhánh)</span>
+> ### <span style="color:blue;">🔵 Branch Naming Conventions (Quy ước đặt tên nhánh):</span>
 > ```
 > feature/:  dành cho phát triển tính năng mới
 > bugfix/:   dành cho sửa lỗi
->
-> Ví dụ:
-> feature/add-friend-functionality
-> bugfix/chat-not-loading
+> 
+> Quy ước:   Tên nhánh ngắn gọn, rõ ràng, không dùng ký tự đặc biệt hay viết hoa.
+> Ví dụ:     feature/add-friend-functionality, bugfix/chat-not-loading
 > ```
 
-### <span style="color:#3498db;">🖼️ Cấu hình Prettier</span>
+### <span style="color:blue;">🖼️ Cấu hình Prettier</span>
 Cấu hình Prettier để tự động định dạng code:
 ```json
 "editor.formatOnPaste": false,
