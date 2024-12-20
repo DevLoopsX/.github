@@ -26,14 +26,14 @@
 Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, Back-end đến các công cụ khác.
 
 ### **Front-end**
-<div align="left" style="margin-bottom: 15px;">
-  <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-React_Query-000?style=for-the-badge&logo=reactquery" alt="React Query" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Tailwind_CSS-000?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Axios-000?style=for-the-badge&logo=axios" alt="Axios" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript" alt="TypeScript" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO" style="margin-right: 10px;" />
+<div align="left" style="margin-bottom: 15px; margin-right: 12px">
+  <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS"/>
+  <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit"/>
+  <img src="https://img.shields.io/badge/-React_Query-000?style=for-the-badge&logo=reactquery" alt="React Query"/>
+  <img src="https://img.shields.io/badge/-Tailwind_CSS-000?style=for-the-badge&logo=tailwindcss" alt="Tailwind CSS"/>
+  <img src="https://img.shields.io/badge/-Axios-000?style=for-the-badge&logo=axios" alt="Axios"/>
+  <img src="https://img.shields.io/badge/-TypeScript-000?style=for-the-badge&logo=typescript" alt="TypeScript"/>
+  <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO"/>
 </div>
 
 ### **Back-end**
