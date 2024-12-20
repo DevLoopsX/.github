@@ -45,7 +45,7 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
   <img src="https://img.shields.io/badge/-Spring_Boot_3-000?style=for-the-badge&logo=springboot" alt="Spring Boot" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity" alt="Spring Security" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Spring_Data_JPA-000?style=for-the-badge&logo=spring" alt="Spring Data JPA" style="margin-right: 19px; margin-bottom: 12px;"/>
-  <img src="https://img.shields.io/badge/-MySQL-000?style=for-the-badge&logo=mysql" alt="MySQL" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-PostgreSQL-000?style=for-the-badge&logo=PostgreSQL" alt="MySQL" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Maven-000?style=for-the-badge&logo=apachemaven" alt="Maven" style="margin-right: 19px; margin-bottom: 12px;"/>
 </div>
 
