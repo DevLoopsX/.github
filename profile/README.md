@@ -31,20 +31,20 @@
 
 > ### <span style="color:blue;">🟢 Commit Convention (Quy ước khi commit code lên GitHub):</span>
 > ```
-> feat:     thêm một feature mới
-> fix:      sửa lỗi trong hệ thống
-> refactor: sửa code mà không thêm tính năng hoặc fix bug
-> docs:     cập nhật hoặc thay đổi tài liệu
-> chore:    thay đổi nhỏ, không liên quan đến logic code
-> style:    thay đổi về giao diện, CSS/UI
-> perf:     cải thiện hiệu năng xử lý
-> vendor:   cập nhật phiên bản dependencies, packages
+> feat:      thêm một feature mới
+> fix:       sửa lỗi trong hệ thống
+> refactor:  sửa code mà không thêm tính năng hoặc fix bug
+> docs:      cập nhật hoặc thay đổi tài liệu
+> chore:     thay đổi nhỏ, không liên quan đến logic code
+> style:     thay đổi về giao diện, CSS/UI
+> perf:      cải thiện hiệu năng xử lý
+> vendor:    cập nhật phiên bản dependencies, packages
 > ```
 
 > ### <span style="color:blue;">🔵 Branch Naming Conventions (Quy ước đặt tên nhánh):</span>
 > ```
-> feature/: dành cho phát triển tính năng mới
-> bugfix/:  dành cho sửa lỗi
+> feature/:  dành cho phát triển tính năng mới
+> bugfix/:   dành cho sửa lỗi
 > 
 > Quy ước: Tên nhánh ngắn gọn, rõ ràng, không dùng ký tự đặc biệt hay viết hoa.
 > Ví dụ: feature/add-friend-functionality, bugfix/chat-not-loading
