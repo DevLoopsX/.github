@@ -41,7 +41,7 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 
 ### <span style="font-size:18px;">🔧 Back-end</span>
 <div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap;">
-  <img src="https://img.shields.io/badge/-Java_Core_21-000?style=for-the-badge&logo=openjdk" alt="Java Core" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-Java_21-000?style=for-the-badge&logo=openjdk" alt="Java Core" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Spring_Boot_3-000?style=for-the-badge&logo=springboot" alt="Spring Boot" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity" alt="Spring Security" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Spring_Data_JPA-000?style=for-the-badge&logo=spring" alt="Spring Data JPA" style="margin-right: 19px; margin-bottom: 12px;"/>
