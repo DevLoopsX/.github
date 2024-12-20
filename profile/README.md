@@ -53,7 +53,7 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 
 ### <span style="font-size:18px;">🌐 Others</span>
 <div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap;">
-  <img src="https://img.shields.io/badge/-AWS_(EC2_RDS_S3)-000?style=for-the-badge&logo=AmazonWebServices" alt="AWS" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-AWS_(EC2_S3)-000?style=for-the-badge&logo=AmazonWebServices" alt="AWS" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git" alt="Git" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github" alt="GitHub" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-GitHub_Actions-000?style=for-the-badge&logo=githubactions" alt="GitHub Actions" style="margin-right: 19px; margin-bottom: 12px;"/>
