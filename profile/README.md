@@ -84,7 +84,7 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 - **Vai trò seller**: Có tất cả các tính năng của user
   - Quản lý sản phẩm: thêm, sửa, xóa, xem sản phẩm. Thêm option (nếu có) cho người mua chọn loại sản phẩm
   - Quản lý kho hàng: thêm, sửa, xóa, xem kho hàng. 
-  - Quản lý mã giảm giá riêng của shop & 
+  - Quản lý mã giảm giá riêng của shop.
   - Quản lý doanh thu, xem và tổng kết doanh thu (ngày, tuần, tháng).
   - Chat thời gian thực về sản phẩm với người mua sản phẩm của shop.
   - Quản lý đơn hàng (xem danh sách, cập nhật trạng thái, xem thông tin chi tiết, quá trình vận chuyển).
