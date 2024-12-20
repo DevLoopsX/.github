@@ -23,7 +23,7 @@
 Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, Back-end đến các công cụ khác.
 
 ### 💻 **Front-end**
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS" />
   <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit" />
   <img src="https://img.shields.io/badge/-React_Query-000?style=for-the-badge&logo=reactquery" alt="React Query" />
@@ -36,7 +36,7 @@ Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, 
 ---
 
 ### ⚙️ **Back-end**
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/-Java_Core_21-000?style=for-the-badge&logo=openjdk" alt="Java Core" />
   <img src="https://img.shields.io/badge/-Spring_Boot_3-000?style=for-the-badge&logo=springboot" alt="Spring Boot" />
   <img src="https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity" alt="Spring Security" />
@@ -49,7 +49,7 @@ Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, 
 ---
 
 ### ☁️ **Others**
-<p align="center">
+<p align="left">
   <img src="https://img.shields.io/badge/-AWS_(EC2_RDS_S3)-000?style=for-the-badge&logo=amazonaws" alt="AWS" />
   <img src="https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git" alt="Git" />
   <img src="https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github" alt="GitHub" />
