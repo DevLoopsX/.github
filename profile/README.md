@@ -37,22 +37,22 @@ Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, 
 </div>
 
 ### **Back-end**
-<div align="left" style="margin-bottom: 15px;">
-  <img src="https://img.shields.io/badge/-Java_Core_21-000?style=for-the-badge&logo=openjdk" alt="Java Core" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Spring_Boot_3-000?style=for-the-badge&logo=springboot" alt="Spring Boot" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity" alt="Spring Security" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Spring_Data_JPA-000?style=for-the-badge&logo=spring" alt="Spring Data JPA" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-MySQL-000?style=for-the-badge&logo=mysql" alt="MySQL" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Maven-000?style=for-the-badge&logo=apachemaven" alt="Maven" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO" style="margin-right: 10px;" />
+<div align="left" style="margin-bottom: 15px; margin-right: 12px">
+  <img src="https://img.shields.io/badge/-Java_Core_21-000?style=for-the-badge&logo=openjdk" alt="Java Core"/>
+  <img src="https://img.shields.io/badge/-Spring_Boot_3-000?style=for-the-badge&logo=springboot" alt="Spring Boot"/>
+  <img src="https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity" alt="Spring Security"/>
+  <img src="https://img.shields.io/badge/-Spring_Data_JPA-000?style=for-the-badge&logo=spring" alt="Spring Data JPA"/>
+  <img src="https://img.shields.io/badge/-MySQL-000?style=for-the-badge&logo=mysql" alt="MySQL"/>
+  <img src="https://img.shields.io/badge/-Maven-000?style=for-the-badge&logo=apachemaven" alt="Maven"/>
+  <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO"/>
 </div>
 
 ### **Others**
-<div align="left" style="margin-bottom: 15px;">
-  <img src="https://img.shields.io/badge/-AWS_(EC2_RDS_S3)-000?style=for-the-badge&logo=amazonaws" alt="AWS" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git" alt="Git" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github" alt="GitHub" style="margin-right: 10px;" />
-  <img src="https://img.shields.io/badge/-GitHub_Actions-000?style=for-the-badge&logo=githubactions" alt="GitHub Actions" style="margin-right: 10px;" />
+<div align="left" style="margin-bottom: 15px; margin-right: 12px">
+  <img src="https://img.shields.io/badge/-AWS_(EC2_RDS_S3)-000?style=for-the-badge&logo=aws" alt="AWS"/>
+  <img src="https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git" alt="Git"/>
+  <img src="https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github" alt="GitHub"/>
+  <img src="https://img.shields.io/badge/-GitHub_Actions-000?style=for-the-badge&logo=githubactions" alt="GitHub Actions"/>
 </div>
 
 ---
