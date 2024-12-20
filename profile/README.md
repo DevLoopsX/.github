@@ -12,17 +12,18 @@
 **Ý nghĩa tên Swiftera**: Kết hợp giữa “Swift” (nhanh như chớp) và “Era” (kỷ nguyên, thời đại) thể hiện đây là nền tảng thương mại điện tử với một kỷ nguyên mua sắm siêu tốc, nơi mọi giao dịch diễn ra nhanh nhẹn, tiện lợi, giá cả phải chăng và dễ sử dụng.
 
 **Lý do lựa chọn dự án**:  
+
 1. Một số công ty sẽ yêu cầu ứng viên có kinh nghiệm trong việc xây dựng website về thương mại điện tử nên làm chủ đề này có thể giúp điền vào profile.  
+
 2. Có nhiều website mẫu để tham khảo về giao diện, tính năng,... như Shopee, Lazada, Tiki, Amazon.  
-3. Chủ đề phổ biến và có rất nhiều tính năng nên học được nhiều và tăng kinh nghiệm làm dự án. Có nhiều tính năng phổ biến như: quản lý sản phẩm vào giỏ hàng, đặt hàng, thanh toán,... có thể sử dụng ở nhiều dự án khác không chỉ riêng e-commerce.
+
+3. Chủ đề phổ biến và có rất nhiều tính năng nên học được nhiều và tăng kinh nghiệm làm dự án. Có nhiều tính năng phổ biến như: quản lý sản phẩm vào giỏ hàng, đặt hàng, thanh toán,... có thể sử dụng ở nhiều dự án khác không chỉ riêng e-commerce.  
 
 ---
 
 ## <span id="công-nghệ-sử-dụng" style="color:red;">🛠️ Công nghệ sử dụng</span>
 
-Dự án **Swiftera** áp dụng các công nghệ hiện đại về Front-end (React.js) và Back-end (Java Spring).
-
-### 💻 **Front-end**
+### **Front-end**
 <p align="left">
   <img src="https://img.shields.io/badge/-ReactJS-000?style=for-the-badge&logo=react" alt="ReactJS" />
   <img src="https://img.shields.io/badge/-Redux_Toolkit-000?style=for-the-badge&logo=redux&logoColor=9370DB" alt="Redux Toolkit" />
@@ -33,9 +34,7 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại về Front-end 
   <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO" />
 </p>
 
----
-
-### ⚙️ **Back-end**
+### **Back-end**
 <p align="left">
   <img src="https://img.shields.io/badge/-Java_Core_21-000?style=for-the-badge&logo=openjdk" alt="Java Core" />
   <img src="https://img.shields.io/badge/-Spring_Boot_3-000?style=for-the-badge&logo=springboot" alt="Spring Boot" />
@@ -46,9 +45,7 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại về Front-end 
   <img src="https://img.shields.io/badge/-Socket.IO-000?style=for-the-badge&logo=socket.io" alt="Socket.IO" />
 </p>
 
----
-
-### ☁️ **Others**
+### **Others**
 <p align="left">
   <img src="https://img.shields.io/badge/-AWS_(EC2_RDS_S3)-000?style=for-the-badge&logo=amazonaws" alt="AWS" />
   <img src="https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git" alt="Git" />
