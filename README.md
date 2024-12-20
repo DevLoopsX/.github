@@ -16,7 +16,7 @@
 
 ## <span id="công-nghệ-sử-dụng" style="color:red;">🛠️ Công nghệ sử dụng</span>
 - **Front-end**: React.js, Redux Toolkit (RTK quản lý local state), React Query (quản lý remote state), Tailwind CSS (+shadcn/ui), Axios, TypeScript, Socket.IO (chat real time).
-- **Back-end**: Java Core 21, Spring Ecosystem (Spring Boot 3, Spring Security, Spring Data/JPA), MySQL, Maven, Socket.IO (chat real time), RESTful API.
+- **Back-end**: Java Core 21, REST API, Spring Ecosystem (Spring Boot 3, Spring Security, Spring Data/JPA), MySQL, Maven, Socket.IO (chat real time).
 - **Others**: AWS (EC2, RDS, S3), Git & GitHub, GitHub Actions (CI/CD).
 
 ## <span id="lấy-ý-tưởng-dự-án" style="color:red;">💡 Lấy ý tưởng dự án</span>
