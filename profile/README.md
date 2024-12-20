@@ -62,12 +62,37 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 ---
 
 ## <span id="lấy-ý-tưởng-dự-án" style="color:red;">💡 Lấy ý tưởng dự án</span>
-### <span style="color:blue;">Các tính năng chính:</span>
-- **Đăng ký, đăng nhập, đăng xuất tài khoản người dùng**.
-- **Chat tin nhắn thời gian thực giữa người bán và người mua về sản phẩm**:
-  - Tin nhắn văn bản.
-  - Hỗ trợ Emoji.
-  - Upload file: hình ảnh, video (<= 5MB).
+### <span style="color:blue;">Các tính năng chính tùy theo vai trò của hệ thống</span>
+- **Các tính năng chung cho tất cả vai trò**:
+  - Đăng ký, đăng nhập, đăng xuất, xác thực (email, otp) tài khoản người dùng
+  - Xem sản phẩm (đánh giá, sao, giá cả, tên sản phẩm, bình luận,...), lọc, sắp xếp, tìm kiếm.
+  - Tất cả vai trò đều có thể quản lý bình luận của chính mình. Admin có quyền quản lý bình luận của vai trò khác.
+- **Vai trò user**:
+  - Chọn số lượng, loại sản phẩm và thêm sản phẩm vào giỏ hàng.
+  - Tick chọn sản phẩm cần mua và thanh toán sản phẩm.
+  - Áp mã giảm giá cho sản phẩm (shop, toàn sàn) có 2 loại: freeship (1 mã 1 lần), price (1 mã 1 lần/loại, tối đa 2 mã).
+  - Chat thời gian thực về sản phẩm với người bán.
+  
+- **Vai trò admin**:
+  - Xem, xoá và duyệt sản phẩm được shop đăng bán.
+  - Xem, xoá, chỉnh sửa thông tin người dùng.
+  - Quản lý quyền hạn và vai trò của các roles khác.
+  - Duyệt yêu cầu trở thành role seller của user.
+  - Quản lý mã giảm giá toàn sàn.
+  - Xem doanh thu của seller.
+  
+- **Vai trò seller**: Có tất cả các tính năng của user
+  - Quản lý sản phẩm: thêm, sửa, xóa, xem sản phẩm. Thêm option (nếu có) cho người mua chọn loại sản phẩm
+  - Quản lý kho hàng: thêm, sửa, xóa, xem kho hàng. 
+  - Quản lý mã giảm giá riêng của shop & 
+  - Quản lý doanh thu, xem và tổng kết doanh thu (ngày, tuần, tháng).
+  - Chat thời gian thực về sản phẩm với người mua sản phẩm của shop.
+  - Quản lý đơn hàng (xem danh sách, cập nhật trạng thái, xem thông tin chi tiết, quá trình vận chuyển).
+  - Xử lý đơn hoàn tiền, khiếu nại.
+
+- **Vai trò shipper**:
+  - Xem danh sách các đơn hàng cần giao.
+  - Cập nhật trạng thái đơn hàng (Đang giao – Đã giao – Thất bại).
 
 ---
 
