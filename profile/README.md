@@ -20,7 +20,7 @@
 
 ## <span id="công-nghệ-sử-dụng" style="color:red;">🛠️ Công nghệ sử dụng</span>
 
-Dự án **Swiftera** áp dụng các công nghệ tiên tiến từ Front-end, Back-end đến các công cụ khác.
+Dự án **Swiftera** áp dụng các công nghệ hiện đại về Front-end (React.js) và Back-end (Java Spring).
 
 ### 💻 **Front-end**
 <p align="left">
