@@ -64,7 +64,7 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 ## <span id="lấy-ý-tưởng-dự-án" style="color:red;">💡 Lấy ý tưởng dự án</span>
 ### <span style="color:blue;">Các tính năng chính tùy theo vai trò của hệ thống</span>
 - **Các tính năng chung cho tất cả vai trò**:
-  - Đăng ký, đăng nhập, đăng xuất, xác thực (email, otp) tài khoản người dùng
+  - Đăng ký, đăng nhập, đăng xuất, xác thực (email, otp) tài khoản người dùng,...
   - Xem sản phẩm (đánh giá, sao, giá cả, tên sản phẩm, bình luận,...), lọc, sắp xếp, tìm kiếm.
   - Tất cả vai trò đều có thể quản lý bình luận của chính mình. Admin có quyền quản lý bình luận của vai trò khác.
 - **Vai trò user**:
