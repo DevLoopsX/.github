@@ -1,12 +1,11 @@
-# 🌐 Sevina Project - Hệ thống cho thuê xe đạp và xe điện
+# 🌐 Sevina Project - Hệ thống cho thuê xe máy và ô tô tự lái áp dụng công nghệ GPS và vé điện tử
 
 ## 📚 Mục lục
 1. [Tên dự án và chủ đề](#tên-dự-án-và-chủ-đề)
 2. [Lý do lựa chọn dự án](#lý-do-lựa-chọn-dự-án)
 3. [Công nghệ sử dụng](#công-nghệ-sử-dụng)
 4. [Các tính năng chính](#các-tính-năng-chính)
-5. [Vấn đề có thể gặp phải](#vấn-đề-có-thể-gặp-phải)
-6. [Nguyên tắc làm việc](#nguyên-tắc-làm-việc)
+5. [Nguyên tắc làm việc](#nguyên-tắc-làm-việc)
 
 ---
 
@@ -80,53 +79,79 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 
 ## <span id="các-tính-năng-chính">🚲 Các tính năng chính</span>
 
-### 🛡️ 1. Xác thực & Bảo mật _(Phần mềm)_
-- **Đăng ký, đăng nhập** qua Email/Số điện thoại.
-- **Quên mật khẩu**: Hỗ trợ đặt lại nhanh chóng.
-- **Xác thực CCCD & GPLX:** Người dùng nhập số CCCD/GPLX nhưng do không thể truy cập API của chính phủ, hệ thống sử dụng **sample data** để thay thế.
-- **Bảo mật dữ liệu cá nhân:** Mã hóa thông tin thuê xe.
-
-### 🏍️ 2. Thuê xe & Trả xe _(Phần mềm + Phần cứng)_
-- **Bản đồ trạm xe Sevina**: Hiển thị vị trí các trạm xe và trạm sạc điện cho xe máy điện, ô tô.
-- **Chọn thời gian thuê**: Người dùng chọn giờ cụ thể để thuê.
-- **Kiểm tra xe trống**: Nếu xe đã có người thuê trong thời gian đó, người khác không thể thuê.
-- **Trả xe về đúng trạm**: Người thuê phải đưa xe về đúng trạm Sevina hoặc trạm gần nhất.
-- **Nhân viên hỗ trợ tại trạm**: Hỗ trợ kiểm tra giấy tờ, bảo dưỡng nhanh.
-- **Mở khóa xe**: Dùng **QR Code hoặc Bluetooth**.
-- **Theo dõi vị trí xe**: Sử dụng **GPS** hiển thị trên GoongMap.
-
-#### Các tình huống thực tế
-- **Trả xe đúng giờ, đúng địa điểm**: Không phát sinh chi phí.
-- **Trả xe trễ**: Tự động tính thêm phí phạt.
-- **Xe hỏng hoặc gặp tai nạn**: Người dùng gửi đơn online cho bộ phận hỗ trợ, các thủ tục pháp lý xử lý ngoài hệ thống.
-- **Xe bị đánh cắp**:
-  1. **GPS hoạt động**: Admin theo dõi vị trí xe trên GoongMap.
-  2. **GPS bị vô hiệu hóa**: Dùng thông tin CCCD/GPLX người thuê, báo công an.
-
-### 💳 3. Thanh toán _(Phần mềm)_
-- **Thanh toán trước 100%**: Người dùng phải trả hết tiền thuê xe.
-- **Hỗ trợ nhiều phương thức**: Ví MoMo, thẻ ngân hàng, hoặc tiền mặt.
-- **Xác nhận thanh toán**: Người dùng chỉ thuê xe khi thanh toán đủ và giấy tờ hợp lệ.
-
-### 📡 4. Theo dõi hành trình & Mô phỏng GPS _(Phần mềm + Thực tế)_
-- **Hiển thị vị trí xe, thời gian thuê**: Admin và người dùng có thể xem hành trình.
-- **Mô phỏng bằng điện thoại**: Đăng nhập tài khoản GoongMap để giả lập xe.
-- **Admin dùng laptop**: Giám sát vị trí xe theo thời gian thực.
-
-### 📜 5. Lịch sử thuê xe & Hỗ trợ khách hàng _(Phần mềm)_
-- **Lịch sử chi tiết**: Hiển thị các chuyến thuê trước đây.
-- **Hỗ trợ khách hàng**: Live chat, tổng đài hỗ trợ.
-- **Tìm kiếm xe gần nhất**: Bản đồ hiển thị xe trống quanh khu vực.
+Hệ thống Sevina gồm hai phần chính: **Logic hệ thống** (tính năng trên phần mềm) và **Logic ngoài đời thực** (quy trình thực tế tại trạm xe).
 
 ---
 
-## <span id="vấn-đề-có-thể-gặp-phải">🚨 Vấn đề có thể gặp phải</span>
+### 🛡️ 1. Xác thực & Bảo mật
+#### **Logic hệ thống (Phần mềm)**
+- **Đăng ký, đăng nhập** qua Email/Số điện thoại.
+- **Quên mật khẩu**: Hỗ trợ đặt lại nhanh chóng.
+- **Xác thực CCCD & GPLX trực tuyến**: Tích hợp VNPT eKYC hoặc FPT.AI eKYC để kiểm tra giấy tờ điện tử (miễn phí giới hạn).
 
-- **Không thể xác minh CCCD/GPLX**: Không có API chính phủ → Dùng sample data.
-- **Giới hạn GoongMap**: Giới hạn 1000 lần gọi API/ngày.
-- **Bảo mật dữ liệu**: Mã hóa thông tin CCCD/GPLX, tránh rò rỉ.
-- **Khai báo sai thông tin**: Người dùng có thể nhập thông tin không chính xác, cần cơ chế kiểm soát.
-- **Nguy cơ mất kết nối GPS**: GPS bị vô hiệu hóa, khó tìm xe.
+#### **Logic ngoài đời thực**
+- **Xác thực trực tiếp tại cửa hàng Sevina**: Người thuê xe đến trạm, nhân viên kiểm tra giấy tờ CCCD & GPLX và xác nhận trên hệ thống.
+
+---
+
+### 🏍️ 2. Thuê xe & Trả xe
+#### **Logic hệ thống (Phần mềm)**
+- **Bản đồ Goong Maps API**:
+  - Hiển thị trạm xe gần nhất với vị trí của người thuê.
+  - Hiển thị xe có sẵn trong trạm.
+- **Chọn thời gian thuê**: Người dùng đặt trước thời gian thuê cụ thể.
+- **Kiểm tra xe trống**: Hệ thống chỉ cho phép thuê xe chưa có người đặt trước.
+- **Mở khóa xe**: Sử dụng **QR Code hoặc Bluetooth**.
+- **Theo dõi vị trí xe**: Hiển thị trên Goong Maps API để giám sát hành trình.
+
+#### **Logic ngoài đời thực**
+- **Trạm xe Sevina** là nơi chứa xe, bảo trì, hỗ trợ thuê xe.
+- **Nhân viên tại trạm hỗ trợ** kiểm tra giấy tờ, hướng dẫn lấy xe.
+- **Xe phải trả về đúng trạm** hoặc trạm gần nhất.
+
+#### **Trường hợp đặc biệt**
+- **Trả xe đúng giờ, đúng địa điểm**: Không phát sinh chi phí.
+- **Trả xe trễ**: Hệ thống tự động tính phí phạt.
+- **Xe hỏng hoặc tai nạn**: Người dùng gửi đơn hỗ trợ online, các thủ tục pháp lý xử lý ngoài hệ thống.
+- **Xe bị đánh cắp**:
+  1. **GPS hoạt động**: Admin theo dõi vị trí xe trên Goong Maps.
+  2. **GPS bị vô hiệu hóa**: Sử dụng thông tin CCCD/GPLX để báo công an.
+
+---
+
+### 💳 3. Thanh toán vé điện tử
+#### **Logic hệ thống (Phần mềm)**
+- **Thanh toán trước 100%**: Người dùng phải trả tiền thuê xe trước khi nhận xe.
+- **Hỗ trợ thanh toán qua**: MoMo, VNPAY, ngân hàng.
+- **Hệ thống gửi mã QR thuê xe** sau khi thanh toán thành công.
+
+#### **Logic ngoài đời thực**
+- **Người thuê xe đến trạm Sevina** và xuất trình **mã QR thuê xe**.
+- **Nhân viên quét mã QR**, xác nhận trên hệ thống.
+- **Nhân viên kiểm tra giấy tờ xe CCCD & GPLX**, bấm xác thực trên hệ thống.
+- **Nhân viên hướng dẫn lấy xe từ trạm**.
+
+---
+
+### 📡 4. Theo dõi hành trình & Mô phỏng GPS
+#### **Logic hệ thống (Phần mềm)**
+- **Hiển thị vị trí xe, thời gian thuê** trên ứng dụng.
+- **Mô phỏng GPS**: Người dùng có thể đăng nhập tài khoản Goong Maps để giả lập vị trí xe.
+- **Admin giám sát vị trí xe theo thời gian thực** trên laptop.
+
+#### **Logic ngoài đời thực**
+- **Người thuê xe có thể kiểm tra hành trình của mình qua ứng dụng**.
+
+---
+
+### 📜 5. Lịch sử thuê xe & Hỗ trợ khách hàng
+#### **Logic hệ thống (Phần mềm)**
+- **Lịch sử chi tiết**: Hiển thị danh sách các chuyến thuê trước đây.
+- **Hỗ trợ khách hàng**: Cung cấp Live chat, tổng đài hỗ trợ.
+- **Tìm kiếm xe gần nhất**: Hiển thị xe trống quanh khu vực người thuê.
+
+#### **Logic ngoài đời thực**
+- **Người dùng có thể yêu cầu nhân viên tại trạm hỗ trợ trực tiếp** nếu gặp vấn đề với xe.
 
 ---
 
