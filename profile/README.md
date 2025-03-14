@@ -1,23 +1,41 @@
-# <span style="color:red;">🌐 Swiftera Project (E-commerce)</span>
+# 🌐 Sevina Project - Hệ thống cho thuê xe đạp và xe điện
 
-## <span style="color:red;">📚 Mục lục</span>
-- [<span style="color:red;">Tên dự án và chủ đề</span>](#tên-dự-án-và-chủ-đề)
-- [<span style="color:red;">Công nghệ sử dụng</span>](#công-nghệ-sử-dụng)
-- [<span style="color:red;">Lấy ý tưởng dự án</span>](#lấy-ý-tưởng-dự-án)
-- [<span style="color:red;">Nguyên tắc làm việc</span>](#nguyên-tắc-làm-việc)
+## 📚 Mục lục
+1. [Tên dự án và chủ đề](#tên-dự-án-và-chủ-đề)
+2. [Lý do lựa chọn dự án](#lý-do-lựa-chọn-dự-án)
+3. [Công nghệ sử dụng](#công-nghệ-sử-dụng)
+4. [Các tính năng chính](#các-tính-năng-chính)
+5. [Vấn đề có thể gặp phải](#vấn-đề-có-thể-gặp-phải)
+6. [Nguyên tắc làm việc](#nguyên-tắc-làm-việc)
 
 ---
 
-## <span id="tên-dự-án-và-chủ-đề" style="color:red;">🚀 Tên dự án và lý do lựa chọn dự án</span>
-**Ý nghĩa tên Swiftera**: Kết hợp giữa “Swift” (nhanh như chớp) và “Era” (kỷ nguyên, thời đại) thể hiện đây là nền tảng thương mại điện tử với một kỷ nguyên mua sắm siêu tốc, nơi mọi giao dịch diễn ra nhanh chóng, tiện lợi, giá cả phải chăng và dễ sử dụng.
+## <span id="tên-dự-án-và-chủ-đề">🚀 Tên dự án và chủ đề</span>
 
-**Lý do lựa chọn dự án**:  
+### ✨ Ý nghĩa tên Sevina
 
-1. Một số công ty sẽ yêu cầu ứng viên có kinh nghiệm trong việc xây dựng website về thương mại điện tử nên làm chủ đề này có thể giúp điền vào profile.  
+**Sevina** là sự kết hợp của hai phần: **SEV** và **INA**, mỗi phần mang ý nghĩa đặc biệt:
 
-2. Có nhiều website mẫu để tham khảo về giao diện, tính năng,... như Shopee, Lazada, Tiki, Amazon.  
+#### "SEV"
+- **Service (Dịch vụ):** Đại diện cho dịch vụ cho thuê xe hiện đại, tiện ích.
+- **Sustainable (Bền vững):** Hướng đến một hệ thống giao thông xanh, bảo vệ môi trường.
+- **Smart (Thông minh):** Ứng dụng công nghệ **GPS, Bluetooth, AI** để tối ưu hóa trải nghiệm người dùng.
+- **Seven (Số 7 may mắn):** Con số may mắn tượng trưng cho sự phát triển và thuận lợi trong kinh doanh.
 
-3. Chủ đề phổ biến và có rất nhiều tính năng nên học được nhiều và tăng kinh nghiệm làm dự án. Có nhiều tính năng phổ biến như: quản lý sản phẩm vào giỏ hàng, đặt hàng, thanh toán,... có thể sử dụng ở nhiều dự án khác không chỉ riêng e-commerce.  
+#### "INA"
+- **Innovation (Đổi mới):** Mang đến giải pháp thuê xe đột phá, hiện đại.
+- **Integration (Tích hợp):** Kết hợp nhiều phương thức thanh toán, mở khóa, theo dõi xe.
+- **Vietnam (Việt Nam):** Tạo ra giải pháp dành riêng cho người Việt Nam, đáp ứng đặc thù giao thông trong nước.
+
+---
+
+## <span id="lý-do-lựa-chọn-dự-án">🔥 Lý do lựa chọn dự án</span>
+
+- **Hệ thống giao thông thông minh (ITS)** đang là xu hướng phát triển tại Việt Nam, giúp tối ưu hóa di chuyển.
+- **Nhu cầu thuê xe điện và xe đạp tăng cao** tại các thành phố lớn, khu du lịch, trường học nhưng chưa có nền tảng tối ưu.
+- **Giải quyết bài toán quản lý xe điện:** Định vị xe, kiểm soát việc thuê/trả xe hiệu quả, đảm bảo an toàn thông tin.
+- **Hỗ trợ thanh toán số:** Giúp người dùng dễ dàng thanh toán, tránh tình trạng thu phí thủ công.
+- **Ứng dụng công nghệ:** Kết hợp GPS, GoongMap, QR Code, Bluetooth để cải thiện trải nghiệm người dùng.
 
 ---
 
@@ -60,38 +78,55 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 
 ---
 
-## <span id="lấy-ý-tưởng-dự-án" style="color:red;">💡 Lấy ý tưởng dự án</span>
-### <span style="color:blue;">Các tính năng chính tùy theo vai trò của hệ thống</span>
-- **Các tính năng chung cho tất cả vai trò**:
-  - Đăng ký, đăng nhập, đăng xuất, xác thực (email, otp) tài khoản người dùng,...
-  - Xem sản phẩm (đánh giá, sao, giá cả, tên sản phẩm, bình luận,...), lọc, sắp xếp, tìm kiếm.
-  - Tất cả vai trò đều có thể quản lý bình luận của chính mình. Admin có quyền quản lý bình luận của vai trò khác.
-- **Vai trò user**:
-  - Chọn số lượng, loại sản phẩm và thêm sản phẩm vào giỏ hàng.
-  - Tick chọn sản phẩm cần mua và thanh toán sản phẩm.
-  - Áp mã giảm giá cho sản phẩm (shop, toàn sàn) có 2 loại: freeship (1 mã 1 lần), price (1 mã 1 lần/loại, tối đa 2 mã).
-  - Chat thời gian thực về sản phẩm với người bán.
-  
-- **Vai trò admin**:
-  - Xem, xoá và duyệt sản phẩm được shop đăng bán.
-  - Xem, xoá, chỉnh sửa thông tin người dùng.
-  - Quản lý quyền hạn và vai trò của các roles khác.
-  - Duyệt yêu cầu trở thành role seller của user.
-  - Quản lý mã giảm giá toàn sàn.
-  - Xem doanh thu của seller.
-  
-- **Vai trò seller**: Có tất cả các tính năng của user
-  - Quản lý sản phẩm: thêm, sửa, xóa, xem sản phẩm. Thêm option (nếu có) cho người mua chọn loại sản phẩm
-  - Quản lý kho hàng: thêm, sửa, xóa, xem kho hàng. 
-  - Quản lý mã giảm giá riêng của shop.
-  - Quản lý doanh thu, xem và tổng kết doanh thu (ngày, tuần, tháng).
-  - Chat thời gian thực về sản phẩm với người mua sản phẩm của shop.
-  - Quản lý đơn hàng (xem danh sách, cập nhật trạng thái, xem thông tin chi tiết, quá trình vận chuyển).
-  - Xử lý đơn hoàn tiền, khiếu nại.
+## <span id="các-tính-năng-chính">🚲 Các tính năng chính</span>
 
-- **Vai trò shipper**:
-  - Xem danh sách các đơn hàng cần giao.
-  - Cập nhật trạng thái đơn hàng (Đang giao – Đã giao – Thất bại).
+### 🛡️ 1. Xác thực & Bảo mật _(Phần mềm)_
+- **Đăng ký, đăng nhập** qua Email/Số điện thoại.
+- **Quên mật khẩu**: Hỗ trợ đặt lại nhanh chóng.
+- **Xác thực CCCD & GPLX:** Người dùng nhập số CCCD/GPLX nhưng do không thể truy cập API của chính phủ, hệ thống sử dụng **sample data** để thay thế.
+- **Bảo mật dữ liệu cá nhân:** Mã hóa thông tin thuê xe.
+
+### 🏍️ 2. Thuê xe & Trả xe _(Phần mềm + Phần cứng)_
+- **Bản đồ trạm xe Sevina**: Hiển thị vị trí các trạm xe và trạm sạc điện cho xe máy điện, ô tô.
+- **Chọn thời gian thuê**: Người dùng chọn giờ cụ thể để thuê.
+- **Kiểm tra xe trống**: Nếu xe đã có người thuê trong thời gian đó, người khác không thể thuê.
+- **Trả xe về đúng trạm**: Người thuê phải đưa xe về đúng trạm Sevina hoặc trạm gần nhất.
+- **Nhân viên hỗ trợ tại trạm**: Hỗ trợ kiểm tra giấy tờ, bảo dưỡng nhanh.
+- **Mở khóa xe**: Dùng **QR Code hoặc Bluetooth**.
+- **Theo dõi vị trí xe**: Sử dụng **GPS** hiển thị trên GoongMap.
+
+#### Các tình huống thực tế
+- **Trả xe đúng giờ, đúng địa điểm**: Không phát sinh chi phí.
+- **Trả xe trễ**: Tự động tính thêm phí phạt.
+- **Xe hỏng hoặc gặp tai nạn**: Người dùng gửi đơn online cho bộ phận hỗ trợ, các thủ tục pháp lý xử lý ngoài hệ thống.
+- **Xe bị đánh cắp**:
+  1. **GPS hoạt động**: Admin theo dõi vị trí xe trên GoongMap.
+  2. **GPS bị vô hiệu hóa**: Dùng thông tin CCCD/GPLX người thuê, báo công an.
+
+### 💳 3. Thanh toán _(Phần mềm)_
+- **Thanh toán trước 100%**: Người dùng phải trả hết tiền thuê xe.
+- **Hỗ trợ nhiều phương thức**: Ví MoMo, thẻ ngân hàng, hoặc tiền mặt.
+- **Xác nhận thanh toán**: Người dùng chỉ thuê xe khi thanh toán đủ và giấy tờ hợp lệ.
+
+### 📡 4. Theo dõi hành trình & Mô phỏng GPS _(Phần mềm + Thực tế)_
+- **Hiển thị vị trí xe, thời gian thuê**: Admin và người dùng có thể xem hành trình.
+- **Mô phỏng bằng điện thoại**: Đăng nhập tài khoản GoongMap để giả lập xe.
+- **Admin dùng laptop**: Giám sát vị trí xe theo thời gian thực.
+
+### 📜 5. Lịch sử thuê xe & Hỗ trợ khách hàng _(Phần mềm)_
+- **Lịch sử chi tiết**: Hiển thị các chuyến thuê trước đây.
+- **Hỗ trợ khách hàng**: Live chat, tổng đài hỗ trợ.
+- **Tìm kiếm xe gần nhất**: Bản đồ hiển thị xe trống quanh khu vực.
+
+---
+
+## <span id="vấn-đề-có-thể-gặp-phải">🚨 Vấn đề có thể gặp phải</span>
+
+- **Không thể xác minh CCCD/GPLX**: Không có API chính phủ → Dùng sample data.
+- **Giới hạn GoongMap**: Giới hạn 1000 lần gọi API/ngày.
+- **Bảo mật dữ liệu**: Mã hóa thông tin CCCD/GPLX, tránh rò rỉ.
+- **Khai báo sai thông tin**: Người dùng có thể nhập thông tin không chính xác, cần cơ chế kiểm soát.
+- **Nguy cơ mất kết nối GPS**: GPS bị vô hiệu hóa, khó tìm xe.
 
 ---
 
