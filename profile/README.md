@@ -1,5 +1,4 @@
-# 🌐 Sevina Project - Hệ thống cho thuê xe máy và ô tô tự lái
-
+# 🌐 Sevina Project - Hệ thống cho thuê xe máy và ô tô áp dụng công nghệ vehicle tracking và vé điện tử
 ## 📚 Mục lục
 
 - [Tên dự án và chủ đề](#ten-du-an-va-chu-de)
