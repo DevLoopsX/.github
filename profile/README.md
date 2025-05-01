@@ -1,4 +1,4 @@
-# 🌐 Sevina Project - Hệ thống cho thuê xe máy và ô tô áp dụng công nghệ GPS, vehicle tracking (theo thời gian thực) và vé điện tử
+# 🌐 Sevina Project - Hệ thống cho thuê xe máy và ô tô với công nghệ GPS, vehicle tracking (theo thời gian thực) và vé điện tử
 ## 📚 Mục lục
 
 - [Tên dự án và chủ đề](#ten-du-an-va-chu-de)
