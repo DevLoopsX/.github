@@ -1,46 +1,38 @@
-# 🌐 Sevina Project - Hệ thống cho thuê xe máy và ô tô tự lái
-
+# 🌐 Sevina Project - Hệ thống cho thuê xe máy và ô tô với công nghệ GPS, vehicle tracking (theo thời gian thực) và vé điện tử
 ## 📚 Mục lục
-1. [Tên dự án và chủ đề](#tên-dự-án-và-chủ-đề)
-2. [Lý do lựa chọn dự án](#lý-do-lựa-chọn-dự-án)
-3. [Công nghệ sử dụng](#công-nghệ-sử-dụng)
-4. [Các tính năng chính](#các-tính-năng-chính)
-5. [Nguyên tắc làm việc](#nguyên-tắc-làm-việc)
+
+- [Tên dự án và chủ đề](#ten-du-an-va-chu-de)
+- [Lý do lựa chọn dự án](#ly-do-lua-chon-du-an)
+- [Công nghệ sử dụng](#cong-nghe-su-dung)
+- [Các tính năng chính](#cac-tinh-nang-chinh)
+- [Nguyên tắc làm việc](#nguyen-tac-lam-viec)
+- [Tính năng phát triển thêm (dự kiến)](#tinh-nang-phat-trien-them-du-kien)
 
 ---
 
-## <span id="tên-dự-án-và-chủ-đề">🚀 Tên dự án và chủ đề</span>
+## 🚀 <a id="ten-du-an-va-chu-de"></a> Tên dự án và chủ đề
 
 ### ✨ Ý nghĩa tên Sevina
+Sevina là sự kết hợp giữa "Service" và "Vietnam", phản ánh mục tiêu của dự án:  
 
-**Sevina** là sự kết hợp của hai phần: **SEV** và **INA**, mỗi phần mang ý nghĩa đặc biệt:
-
-#### "SEV"
-- **Service (Dịch vụ):** Đại diện cho dịch vụ cho thuê xe hiện đại, tiện ích.
-- **Sustainable (Bền vững):** Hướng đến một hệ thống giao thông xanh, bảo vệ môi trường.
-- **Smart (Thông minh):** Ứng dụng công nghệ **GPS, Bluetooth, AI** để tối ưu hóa trải nghiệm người dùng.
-- **Seven (Số 7 may mắn):** Con số may mắn tượng trưng cho sự phát triển và thuận lợi trong kinh doanh.
-
-#### "INA"
-- **Innovation (Đổi mới):** Mang đến giải pháp thuê xe đột phá, hiện đại.
-- **Integration (Tích hợp):** Kết hợp nhiều phương thức thanh toán, mở khóa, theo dõi xe.
-- **Vietnam (Việt Nam):** Tạo ra giải pháp dành riêng cho người Việt Nam, đáp ứng đặc thù giao thông trong nước.
+- **Service**: Cung cấp dịch vụ cho thuê xe ô tô và xe máy tự lái hiện đại, tiện lợi.  
+- **Vietnam**: Một giải pháp được thiết kế dành riêng cho người Việt Nam, tối ưu hóa giao thông đô thị và đáp ứng nhu cầu thực tế.
 
 ---
 
-## <span id="lý-do-lựa-chọn-dự-án">🔥 Lý do lựa chọn dự án</span>
+## 🔥 <a id="ly-do-lua-chon-du-an"></a> Lý do lựa chọn dự án
 
-- **Hệ thống giao thông thông minh (ITS)** đang là xu hướng phát triển tại Việt Nam, giúp tối ưu hóa di chuyển.
-- **Nhu cầu thuê xe điện và xe đạp tăng cao** tại các thành phố lớn, khu du lịch, trường học nhưng chưa có nền tảng tối ưu.
-- **Giải quyết bài toán quản lý xe điện:** Định vị xe, kiểm soát việc thuê/trả xe hiệu quả, đảm bảo an toàn thông tin.
-- **Hỗ trợ thanh toán số:** Giúp người dùng dễ dàng thanh toán, tránh tình trạng thu phí thủ công.
-- **Ứng dụng công nghệ:** Kết hợp GPS, GoongMap, QR Code, Bluetooth để cải thiện trải nghiệm người dùng.
+- Hệ thống giao thông thông minh (ITS) là xu hướng phát triển tại Việt Nam, giúp tối ưu hóa việc di chuyển và quản lý giao thông đô thị.
+- Nhu cầu thuê xe ô tô và xe máy tự lái ngày càng tăng tại các thành phố lớn, nhưng thiếu các nền tảng quản lý hiệu quả và tích hợp công nghệ.
+- Giải quyết bài toán quản lý phương tiện: Định vị xe, theo dõi hành trình, kiểm soát quy trình thuê/trả xe, và đảm bảo an toàn thông tin người dùng.
+- Hỗ trợ thanh toán số: Tích hợp thanh toán qua ví điện tử và mã QR, giảm thiểu giao dịch thủ công, nâng cao trải nghiệm người dùng.
+- Ứng dụng công nghệ hiện đại: Kết hợp GPS, GoongMap API, WebSocket để cải thiện khả năng quản lý và tối ưu hóa hệ thống giao thông.
 
 ---
 
-## <span id="công-nghệ-sử-dụng" style="color:red;">🛠️ Công nghệ sử dụng</span>
+## 🛠️ <a id="cong-nghe-su-dung"></a> Công nghệ sử dụng
 
-Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end (React.js), Back-end (Java Spring) cùng một số công cụ khác.
+Dự án Sevina sử dụng các công nghệ tiên tiến cho cả Front-end và Back-end, cùng với các công cụ hỗ trợ triển khai và quản lý.
 
 ---
 
@@ -69,120 +61,117 @@ Dự án **Swiftera** áp dụng các công nghệ hiện đại từ Front-end 
 
 ### <span style="font-size:18px;">🌐 Others</span>
 <div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap;">
-  <img src="https://img.shields.io/badge/-AWS_(EC2_S3)-000?style=for-the-badge&logo=AmazonWebServices" alt="AWS" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-Git-000?style=for-the-badge&logo=git" alt="Git" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-GitHub-000?style=for-the-badge&logo=github" alt="GitHub" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-Docker-000?style=for-the-badge&logo=docker" alt="Docker" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-Railway-000?style=for-the-badge&logo=railway" alt="Railway" style="margin-right: 19px; margin-bottom: 12px;"/>
   <img src="https://img.shields.io/badge/-GitHub_Actions-000?style=for-the-badge&logo=githubactions" alt="GitHub Actions" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-AWS_S3-000?style=for-the-badge&logo=AmazonWebServices" alt="AWS" style="margin-right: 19px; margin-bottom: 12px;"/>
 </div>
 
 ---
 
-## <span id="các-tính-năng-chính">🚲 Các tính năng chính</span>
+## 🚲 <a id="cac-tinh-nang-chinh"></a> Các tính năng chính
 
-Hệ thống Sevina gồm hai phần chính: **Logic hệ thống** (tính năng trên phần mềm) và **Logic ngoài đời thực** (quy trình thực tế tại trạm xe).
-
----
+Hệ thống Sevina tập trung vào việc quản lý và cho thuê xe ô tô, xe máy tự lái, tích hợp các tính năng Intelligent Transportation System (ITS) để tối ưu hóa trải nghiệm người dùng và quản lý giao thông hiệu quả.
 
 ### 🛡️ 1. Xác thực & Bảo mật
-#### **Logic hệ thống (Phần mềm)**
-- **Đăng ký, đăng nhập** qua Email/Số điện thoại.
-- **Quên mật khẩu**: Hỗ trợ đặt lại nhanh chóng.
-- **Xác thực CCCD & GPLX trực tuyến**: Tích hợp VNPT eKYC hoặc FPT.AI eKYC để kiểm tra giấy tờ điện tử (miễn phí giới hạn).
 
-#### **Logic ngoài đời thực**
-- **Xác thực trực tiếp tại cửa hàng Sevina**: Người thuê xe đến trạm, nhân viên kiểm tra giấy tờ CCCD & GPLX và xác nhận trên hệ thống.
-
----
+- **Đăng ký tài khoản**: Người dùng đăng ký qua email hoặc số điện thoại, hệ thống gửi email xác thực để kích hoạt tài khoản.
+- **Xác thực email**: Sau khi đăng ký, người dùng nhận email xác thực để kích hoạt tài khoản; hỗ trợ gửi lại email nếu cần.
+- **Đăng nhập**: Người dùng đăng nhập bằng email/số điện thoại và mật khẩu, nhận JWT token để truy cập API.
+- **Lấy thông tin tài khoản (Get me)**: Người dùng có thể xem thông tin cá nhân sau khi đăng nhập.
+- **Làm mới token (Get new token)**: Tự động làm mới JWT token khi token hiện tại hết hạn, đảm bảo trải nghiệm liền mạch.
+- **Quên mật khẩu / Đặt lại mật khẩu**: Hỗ trợ khôi phục mật khẩu qua email, gửi liên kết đặt lại mật khẩu.
+- **Bảo mật đa tầng**: Sử dụng Spring Security và JWT để mã hóa dữ liệu, bảo vệ API, quản lý quyền truy cập, và đảm bảo an toàn thông tin người dùng.
 
 ### 🏍️ 2. Thuê xe & Trả xe
-#### **Logic hệ thống (Phần mềm)**
-- **Bản đồ Goong Maps API**:
-  - Hiển thị trạm xe gần nhất với vị trí của người thuê.
-  - Hiển thị xe có sẵn trong trạm.
-- **Chọn thời gian thuê**: Người dùng đặt trước thời gian thuê cụ thể.
-- **Kiểm tra xe trống**: Hệ thống chỉ cho phép thuê xe chưa có người đặt trước.
-- **Mở khóa xe**: Sử dụng **QR Code hoặc Bluetooth**.
-- **Theo dõi vị trí xe**: Hiển thị trên Goong Maps API để giám sát hành trình.
 
-#### **Logic ngoài đời thực**
-- **Trạm xe Sevina** là nơi chứa xe, bảo trì, hỗ trợ thuê xe.
-- **Nhân viên tại trạm hỗ trợ** kiểm tra giấy tờ, hướng dẫn lấy xe.
-- **Xe phải trả về đúng trạm** hoặc trạm gần nhất.
+#### Bản đồ GoongMap API
+- Hiển thị các trạm xe (Station) trên bản đồ với thông tin chi tiết.
+- Tính toán khoảng cách từ vị trí hiện tại tới trạm gần nhất hoặc giữa hai điểm bất kỳ.
 
-#### **Trường hợp đặc biệt**
-- **Trả xe đúng giờ, đúng địa điểm**: Không phát sinh chi phí.
-- **Trả xe trễ**: Hệ thống tự động tính phí phạt.
-- **Xe hỏng hoặc tai nạn**: Người dùng gửi đơn hỗ trợ online, các thủ tục pháp lý xử lý ngoài hệ thống.
-- **Xe bị đánh cắp**:
-  1. **GPS hoạt động**: Admin theo dõi vị trí xe trên Goong Maps.
-  2. **GPS bị vô hiệu hóa**: Sử dụng thông tin CCCD/GPLX để báo công an.
+#### Quy trình thuê xe
+- Người dùng đặt trước thời gian thuê, hệ thống kiểm tra xe khả dụng (AVAILABLE).
+- Sau thanh toán thành công, mã QR được cấp để mở khóa xe tại trạm.
+- Nhân viên quét mã QR để xác nhận và bàn giao xe, trạng thái chuyển sang RENTED.
 
----
+#### Theo dõi xe (Vehicle Tracking)
+- WebSocket (STOMP, SockJS) cập nhật vị trí xe mỗi 1–3 giây.
+- Admin giám sát hành trình xe trên dashboard.
+
+#### Trả xe
+- Người dùng trả xe tại trạm, nhân viên xác nhận và cập nhật trạng thái.
+- Tự động tính phí phạt nếu trả trễ.
+
+#### Trạng thái hệ thống
+- **VehicleStatusType**: `AVAILABLE`, `RESERVED`, `RENTED`, `MAINTENANCE`
+- **RentalOrderStatusType**: `PENDING`, `VERIFIED`, `COMPLETED`, `CANCELLED`
+- **Station**: Hiển thị sức chứa tối đa và số lượng xe hiện có.
 
 ### 💳 3. Thanh toán vé điện tử
-#### **Logic hệ thống (Phần mềm)**
-- **Thanh toán trước 100%**: Người dùng phải trả tiền thuê xe trước khi nhận xe.
-- **Hỗ trợ thanh toán qua**: MoMo, VNPAY, ngân hàng.
-- **Hệ thống gửi mã QR thuê xe** sau khi thanh toán thành công.
 
-#### **Logic ngoài đời thực**
-- **Người thuê xe đến trạm Sevina** và xuất trình **mã QR thuê xe**.
-- **Nhân viên quét mã QR**, xác nhận trên hệ thống.
-- **Nhân viên kiểm tra giấy tờ xe CCCD & GPLX**, bấm xác thực trên hệ thống.
-- **Nhân viên hướng dẫn lấy xe từ trạm**.
-
----
+- **Ví điện tử VNPAY**: Thanh toán online, nhận mã QR để thuê xe.
+- **Thanh toán trực tiếp**: Tùy chọn thanh toán tại trạm.
+- **Lợi ích**: Giảm thời gian chờ tại trạm, quy trình không tiền mặt.
 
 ### 📡 4. Theo dõi hành trình & Mô phỏng GPS
-#### **Logic hệ thống (Phần mềm)**
-- **Hiển thị vị trí xe, thời gian thuê** trên ứng dụng.
-- **Mô phỏng GPS**: Người dùng có thể đăng nhập tài khoản Goong Maps để giả lập vị trí xe.
-- **Admin giám sát vị trí xe theo thời gian thực** trên laptop.
 
-#### **Logic ngoài đời thực**
-- **Người thuê xe có thể kiểm tra hành trình của mình qua ứng dụng**.
+- WebSocket cập nhật vị trí xe liên tục.
+- Mô phỏng GPS qua GoongMap API để theo dõi hành trình.
+- Admin giám sát xe qua dashboard.
 
----
+### 📜 5. Lịch sử thuê xe
 
-### 📜 5. Lịch sử thuê xe & Hỗ trợ khách hàng
-#### **Logic hệ thống (Phần mềm)**
-- **Lịch sử chi tiết**: Hiển thị danh sách các chuyến thuê trước đây.
-- **Hỗ trợ khách hàng**: Cung cấp Live chat, tổng đài hỗ trợ.
-- **Tìm kiếm xe gần nhất**: Hiển thị xe trống quanh khu vực người thuê.
-
-#### **Logic ngoài đời thực**
-- **Người dùng có thể yêu cầu nhân viên tại trạm hỗ trợ trực tiếp** nếu gặp vấn đề với xe.
+- Xem lại danh sách đơn thuê, bao gồm xe, thời gian, chi phí.
 
 ---
 
-## <span id="nguyên-tắc-làm-việc" style="color:red;">📏 Nguyên tắc làm việc</span>
+## 📏 <a id="nguyen-tac-lam-viec"></a> Nguyên tắc làm việc
 
-> ### <span style="color:blue;">🟢 Commit Convention (Quy ước khi commit code lên GitHub):</span>
-> ```
-> feat:      thêm một feature mới
-> fix:       sửa lỗi trong hệ thống
-> refactor:  sửa code mà không thêm tính năng hoặc fix bug
-> docs:      cập nhật hoặc thay đổi tài liệu
-> chore:     thay đổi nhỏ, không liên quan đến logic code
-> style:     thay đổi về giao diện, CSS/UI
-> perf:      cải thiện hiệu năng xử lý
-> vendor:    cập nhật phiên bản dependencies, packages
-> ```
+### ✅ Commit Convention
+```bash
+feat:      thêm một feature mới
+fix:       sửa lỗi trong hệ thống
+refactor:  sửa code mà không thêm tính năng hoặc fix bug
+docs:      cập nhật hoặc thay đổi tài liệu
+chore:     thay đổi nhỏ, không liên quan đến logic code
+style:     thay đổi về giao diện, CSS/UI
+perf:      cải thiện hiệu năng xử lý
+vendor:    cập nhật phiên bản dependencies, packages
+```
 
-> ### <span style="color:blue;">🔵 Branch Naming Conventions (Quy ước đặt tên nhánh):</span>
-> ```
-> feature/:  dành cho phát triển tính năng mới
-> bugfix/:   dành cho sửa lỗi
-> 
-> Quy ước:   Tên nhánh ngắn gọn, rõ ràng, không dùng ký tự đặc biệt hay viết hoa.
-> Ví dụ:     feature/add-friend-functionality, bugfix/chat-not-loading
-> ```
+### ✅ Branch Naming Conventions
+```bash
+feature/:  dành cho phát triển tính năng mới
+bugfix/:   dành cho sửa lỗi
+```
 
-### <span style="color:blue;">🖼️ Cấu hình Prettier</span>
-Cấu hình Prettier để tự động định dạng code:
+### ✅ Quy ước đặt tên nhánh
+```bash
+Tên nhánh ngắn gọn, rõ ràng, không dùng ký tự đặc biệt hay viết hoa.
+Ví dụ:
+feature/add-payment-functionality
+bugfix/map-not-loading
+```
+
+### ✅ Cấu hình Prettier
 ```json
 "editor.formatOnPaste": false,
 "editor.formatOnSave": true,
 "editor.defaultFormatter": "esbenp.prettier-vscode",
 "prettier.singleQuote": true,
 "prettier.semi": true
+```
+
+---
+
+## 🚀 <a id="tinh-nang-phat-trien-them-du-kien"></a> Tính năng phát triển thêm (dự kiến)
+
+Dưới đây là các tính năng tiềm năng để nâng cấp hệ thống Sevina trong tương lai:
+
+1. **Xác thực CCCD & GPLX trực tuyến**: Tích hợp VNPT eKYC hoặc FPT.AI eKYC để xác thực giấy tờ tự động.
+2. **Xác thực đa yếu tố (MFA)**: Google Authenticator hoặc SMS OTP.
+3. **Tích hợp hệ thống thu phí điện tử (ETC)**: Ghi nhận phí cầu đường vào hóa đơn thuê xe.
+4. **Cảnh báo vùng nguy hiểm**: Cảnh báo người dùng khi đi vào khu vực tắc nghẽn/nguy hiểm.
+5. **Hệ thống đánh giá xe và trạm**: Cho phép người dùng đánh giá chất lượng dịch vụ.
