@@ -36,7 +36,11 @@
 
 ## <span id="2-lý-do-lựa-chọn-dự-án" style="color:red;">🔥 2. Lý do lựa chọn dự án</span>
 
-- 
+* **Đề tài mới lạ, đột phá tại Việt Nam (Thoát khỏi lối mòn đồ án):** Hầu hết các đồ án môn học Thương mại điện tử hiện nay đều tập trung vào mô hình Bán lẻ truyền thống (Bán quần áo, giày dép, thức ăn...). Việc lựa chọn mô hình **Cho thuê trực tuyến (Rental E-commerce)** mang lại sự mới mẻ, độc đáo. Đề tài này không chỉ giải quyết nhu cầu thực tế của giới trẻ (thích trải nghiệm đồ xịn mà không cần mua đứt) mà còn giúp đồ án trở nên thú vị, nổi bật và ít "nhàm chán" hơn trước hội đồng đánh giá.
+
+* **Thử thách kỹ thuật & Tư duy thiết kế hệ thống (System Design):** Khác với bán đứt, quy trình cho thuê đòi hỏi giải quyết những bài toán logic phức tạp hơn gấp nhiều lần. Nhóm sẽ có cơ hội rèn luyện kỹ năng xử lý: Thuật toán chặn lịch (Block Calendar) để tránh trùng lặp ngày thuê, quản lý dòng tiền đa chiều (Thanh toán tiền thuê + Giữ tiền cọc + Gọi API Hoàn cọc tự động), và đồng bộ trạng thái phức tạp giữa 3 nền tảng (User, Staff, Admin) bằng **Next.js** và **Zustand**.
+
+* **Tính ứng dụng thực tiễn & Quản trị rủi ro doanh nghiệp (O2O):** Dự án không chỉ dừng lại ở việc "code cho web chạy", mà còn thể hiện tư duy kinh doanh và am hiểu pháp luật. Việc áp dụng mô hình O2O (Online to Offline), định danh e-KYC và sử dụng Hợp đồng điện tử OTP giúp giải quyết triệt để "nỗi đau" lớn nhất của ngành cho thuê: Rủi ro mất cắp và Tranh chấp bồi thường, biến Swiftera thành một dự án có tính khả thi cực cao để khởi nghiệp thực tế.
 
 ---
 
