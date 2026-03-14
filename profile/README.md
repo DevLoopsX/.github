@@ -6,9 +6,10 @@
 2. [Lý do lựa chọn dự án](#2-lý-do-lựa-chọn-dự-án)
 3. [Công nghệ sử dụng](#3-công-nghệ-sử-dụng)
 4. [Các tính năng chính (Bám sát Yêu cầu Đề bài)](#4-các-tính-năng-chính-bám-sát-yêu-cầu-đề-bài)
-5. [Vấn đề Pháp lý & Quản trị rủi ro](#5-vấn-đề-pháp-lý--quản-trị-rủi-ro)
-6. [Hướng dẫn sử dụng & Demo](#6-hướng-dẫn-sử-dụng--demo)
-7. [Nguyên tắc làm việc](#7-nguyên-tắc-làm-việc)
+5. [Luồng hoạt động & Kịch bản chi tiết (Business Flow)](#5-luồng-hoạt-động--kịch-bản-chi-tiết-business-flow)
+6. [Vấn đề Pháp lý & Quản trị rủi ro](#6-vấn-đề-pháp-lý--quản-trị-rủi-ro)
+7. [Hướng dẫn sử dụng & Demo](#7-hướng-dẫn-sử-dụng--demo)
+8. [Nguyên tắc làm việc](#8-nguyên-tắc-làm-việc)
 
 ---
 
@@ -25,19 +26,17 @@
 
 ### 🎯 Sơ lược về dự án
 
-**Swiftera** là nền tảng thương mại điện tử hoạt động theo mô hình **Cho thuê (Rental E-commerce)**, tập trung vào đồ công nghệ (B2C và C2C):
+**Swiftera** là nền tảng thương mại điện tử hoạt động theo mô hình **Cho thuê (Rental E-commerce) thuần B2C kết hợp O2O (Online to Offline)**:
 
-- Người cho thuê (**Lessor**) đăng tải thiết bị (máy ảnh, flycam, laptop, console game) với giá thuê theo ngày và tiền cọc thế chấp.
-- Người thuê (**Renter**) chọn ngày rảnh trên lịch, thanh toán tiền thuê và đặt cọc qua ví trung gian (Escrow) để nhận đồ.
-- Ứng dụng tích hợp **Goong Maps / Google Maps** để tìm kiếm đồ cho thuê quanh khu vực và **AI Computer Vision** để soi tình trạng xước xát của máy lúc giao/nhận nhằm bảo vệ tài sản hai bên.
+- **Công ty tự đầu tư và sở hữu 100% kho thiết bị** (máy ảnh, flycam, laptop, console game) để cho khách hàng cá nhân thuê.
+- Khách hàng (**Renter**) thao tác Online: Chọn ngày rảnh, thanh toán tiền thuê, đặt cọc và thực hiện e-KYC (Tải ảnh CCCD).
+- Khách hàng đến nhận máy trực tiếp Offline tại các **Trạm giao dịch (Tech Hubs)** của Swiftera. Tại đây, **Nhân viên (Staff)** thao tác trên hệ thống để đối chiếu danh tính, chụp ảnh đồng kiểm và ký hợp đồng bằng mã OTP.
 
 ---
 
 ## <span id="2-lý-do-lựa-chọn-dự-án" style="color:red;">🔥 2. Lý do lựa chọn dự án</span>
 
-- **Đón đầu xu hướng Rental Economy**: Giải quyết nhu cầu sử dụng đồ công nghệ đắt tiền trong thời gian ngắn của sinh viên, freelancer mà không cần bỏ số tiền lớn mua đứt.
-- **Giải quyết rủi ro bằng công nghệ sâu**: Giải quyết triệt để bài toán mất cắp hoặc tranh chấp hỏng hóc bằng e-KYC định danh, ví trung gian giữ cọc và AI soi vết xước.
-- **Rèn luyện Tech Stack hiện đại**: Xử lý logic Booking phức tạp, Quản lý State tối ưu với Zustand trên nền tảng Next.js (App Router) kết hợp UI components từ shadcn/ui.
+- 
 
 ---
 
@@ -55,13 +54,14 @@
 
 ---
 
-### <span style="font-size:18px;">🔧 Back-end & AI</span>
+### <span style="font-size:18px;">🔧 Back-end</span>
 
 <div align="left" style="margin: 15px 0 20px 0; display: flex; flex-wrap: wrap;">
-  <img src="https://img.shields.io/badge/-Java_25-000?style=for-the-badge&logo=openjdk" alt="Java" style="margin-right: 19px; margin-bottom: 12px;"/>
-  <img src="https://img.shields.io/badge/-Spring_Boot_4-000?style=for-the-badge&logo=springboot" alt="Spring Boot" style="margin-right: 19px; margin-bottom: 12px;"/>
-  <img src="https://img.shields.io/badge/-Spring_Security_6-000?style=for-the-badge&logo=springsecurity" alt="Spring Security" style="margin-right: 19px; margin-bottom: 12px;"/>
-  <img src="https://img.shields.io/badge/-MySQL_8.4-000?style=for-the-badge&logo=mysql" alt="MySQL" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-Java-000?style=for-the-badge&logo=openjdk" alt="Java" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-Spring_Boot-000?style=for-the-badge&logo=springboot" alt="Spring Boot" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-Spring_Security-000?style=for-the-badge&logo=springsecurity" alt="Spring Security" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-Spring_Data_JPA-000?style=for-the-badge&logo=spring" alt="Spring Data JPA" style="margin-right: 19px; margin-bottom: 12px;"/>
+  <img src="https://img.shields.io/badge/-MySQL-000?style=for-the-badge&logo=mysql" alt="MySQL" style="margin-right: 19px; margin-bottom: 12px;"/>
 </div>
 
 ---
@@ -81,89 +81,102 @@
 
 ## <span id="4-các-tính-năng-chính-bám-sát-yêu-cầu-đề-bài" style="color:red;">🎮 4. Các tính năng chính (Bám sát Yêu cầu Đề bài)</span>
 
-Dự án đáp ứng 100% các yêu cầu chức năng từ đề cương môn học:
+Dự án cung cấp 3 cổng giao tiếp (Portals) độc lập, đáp ứng 100% yêu cầu chức năng:
 
-### 1. 🔐 Đăng nhập, đăng xuất & e-KYC
+### 1. 🔐 Đăng nhập, e-KYC & Phân quyền (Auth & RBAC)
+- **Đăng nhập:** Bằng Email/SĐT kèm JWT token.
+- **e-KYC (Bắt buộc):** Renter phải tải lên ảnh CCCD 2 mặt và ảnh Selfie để định danh trước khi thuê nhằm đảm bảo an toàn tài sản pháp lý.
+- **Phân quyền 3 Cấp:** Admin (Quản trị hệ thống), Staff (Nhân viên thao tác tại Hub), Renter (Khách hàng).
 
-- Hỗ trợ đăng nhập bằng Email/SĐT kèm JWT token.
-- Bắt buộc xác thực **e-KYC** (tải lên CCCD 2 mặt) trước khi thuê hoặc cho thuê đồ để đảm bảo định danh người dùng theo quy định pháp luật.
+### 2. 🔍 Lọc, tìm kiếm & Sắp xếp (Filter, Search, Sort)
+- **Tìm kiếm:** Gợi ý tức thì theo tên thiết bị (VD: "Sony A6000").
+- **Lọc thông minh:** Lọc theo danh mục, khoảng giá, điểm lấy hàng (Hubs) và **Lọc theo ngày rảnh (Date Range Picker)**.
+- **Sắp xếp:** Giá tăng/giảm, thiết bị tại Hub gần vị trí khách nhất, đánh giá cao nhất.
 
-### 2. 🎛️ Trang quản trị (Admin Panel)
+### 3. 🖼️ Ảnh sản phẩm & 📱 Responsive
+- Hỗ trợ xem nhiều ảnh sản phẩm chuẩn hóa từ studio.
+- Giao diện xây dựng bằng **Tailwind CSS + shadcn/ui**, đảm bảo trải nghiệm hiển thị Responsive 100% trên cả Desktop, Tablet (Dành cho Staff) và Mobile (Dành cho Renter).
 
-- Phân quyền Role-based Access Control (Admin / Renter / Lessor).
-- Admin quản lý danh sách người dùng, phê duyệt bài đăng (Listing) để tránh hàng cấm, theo dõi doanh thu phí sàn và giải quyết các tranh chấp hư hỏng thiết bị.
+### 4. 🛒 Giỏ hàng, thanh toán (Deposit System)
+- Gom nhiều món đồ vào chung giỏ hàng nếu thời gian thuê trùng khớp.
+- Tích hợp **Cổng thanh toán VNPAY**. Cơ chế tách bạch: `Tổng tiền = Tiền thuê (Công ty thu) + Tiền cọc (Công ty giữ hộ)`. Khi trả máy an toàn, hệ thống tự động gọi API hoàn tiền cọc lại cho Renter.
 
-### 3. 🔍 Lọc, tìm kiếm & Sắp xếp (Filter, Search, Sort)
+### 5. 🗺️ Google Maps / Goong Maps (Trạm nhận hàng)
+- Tích hợp bản đồ định vị các **Tech Hubs** (Trạm giao dịch) của Swiftera quanh khu vực khách hàng (bán kính 5-10km). Khách hàng sẽ chọn Hub gần nhà nhất để đến tự nhận máy (Self-Pickup).
 
-- **Tìm kiếm:** Theo tên thiết bị (VD: "Sony A6000", "MacBook Pro").
-- **Lọc:** Theo danh mục (Máy ảnh, Gaming, PC), khoảng giá thuê, và **lọc theo ngày rảnh (Date Range Picker)** trên lịch.
-- **Sắp xếp:** Giá từ thấp đến cao, thiết bị gần vị trí người dùng nhất, và đánh giá cao nhất.
+### 6. 🎁 Khuyến mại, giá mới, giá cũ
+- Thiết lập chương trình giảm giá linh hoạt (VD: Thuê > 7 ngày giảm 15%). Hiển thị trực quan **Giá cũ (Bị gạch chéo)** và **Giá mới (In đậm)**. Hỗ trợ nhập mã Voucher giảm giá lúc Check-out.
 
-### 4. 🖼️ Ảnh sản phẩm & 📱 Responsive
+### 7. 📜 Chính sách, Hợp đồng & Trang Quản trị (Admin/Staff Portal)
+- **Admin Dashboard:** Thống kê doanh thu, quản lý danh mục máy, quản lý Hubs và điều phối nhân sự (Staff).
+- **Staff Portal:** Dành riêng cho nhân viên tại Hub dùng trên Tablet/Mobile để Check-in đơn, chụp ảnh hiện trạng máy đẩy lên AWS S3 và chốt **Hợp đồng điện tử**.
+- Trang CMS công khai rõ ràng các chính sách đền bù, bảo hành và bảo mật dữ liệu.
 
-- Hỗ trợ tải lên nhiều ảnh cho một sản phẩm (Slider ảnh chi tiết mặt trước, sau, cạnh máy) nhằm minh bạch tình trạng xước xát.
-- Giao diện xây dựng bằng **Tailwind CSS + shadcn/ui** đảm bảo **Responsive 100%**, tương thích hoàn hảo trên cả Mobile, Tablet và Desktop.
-
-### 5. 🛒 Giỏ hàng, thanh toán (Escrow Wallet)
-
-- Cho phép Renter gom nhiều món đồ (thuê cùng thời gian) vào chung một giỏ hàng.
-- Tích hợp thanh toán VNPAY. Hoạt động theo cơ chế **Ví trung gian (Escrow)**: Khách thanh toán Tổng tiền (Tiền thuê + Tiền cọc). Sàn giữ Tiền cọc để làm tài sản bảo đảm, chỉ trả Tiền thuê cho Lessor sau khi giao dịch hoàn tất.
-
-### 6. 🗺️ Google Maps / Goong Maps
-
-- Tích hợp bản đồ để định vị các món đồ cho thuê quanh bán kính 5-10km.
-- Giúp Renter tìm đồ gần nhà để tự đến lấy (**Pickup**), tiết kiệm chi phí vận chuyển 2 chiều đắt đỏ của thiết bị cồng kềnh.
-
-### 7. 🎁 Khuyến mại, giá mới, giá cũ
-
-- Lessor có thể thiết lập chương trình giảm giá nếu thuê dài ngày (VD: Thuê > 7 ngày giảm 20%).
-- UI sẽ hiển thị **Giá cũ (Bị gạch chéo)** và **Giá mới (In đậm, màu đỏ)** trên trang chi tiết sản phẩm. Có hỗ trợ nhập mã Voucher khi thanh toán.
-
-### 8. 📜 Chính sách đổi trả, bảo hành, vận chuyển
-
-- Tích hợp tự động sinh **Hợp đồng điện tử (E-contract)** trước khi thanh toán.
-- Hiển thị minh bạch trang CMS các chính sách: Quy định bồi thường (nếu xước xát/rơi vỡ), Chính sách hoàn cọc tự động, Miễn trừ trách nhiệm dữ liệu.
-
-### 9. ⭐ Đánh giá sản phẩm, bình luận & Liên hệ
-
-- **Đánh giá:** Renter chấm điểm uy tín (Rating 5 sao) và để lại review sau khi trả đồ.
-- **Bình luận & Liên hệ:** Khung hỏi đáp trực tiếp dưới bài đăng hoặc tính năng Chat nội bộ để Renter hỏi Lessor các vấn đề kỹ thuật (VD: "Máy này quay 4K bị quá nhiệt không?"). Có form Contact Admin để báo lỗi.
+### 8. ⭐ Đánh giá sản phẩm, bình luận & Liên hệ
+- Renter đánh giá chất lượng thiết bị và thái độ của nhân viên (Staff) sau khi kết thúc đơn.
+- Box Hỏi/Đáp trực tiếp và Form liên hệ CSKH khi gặp sự cố kỹ thuật.
 
 ---
 
-## <span id="5-vấn-đề-pháp-lý--quản-trị-rủi-ro" style="color:red;">⚖️ 5. Vấn đề Pháp lý & Quản trị rủi ro</span>
+## <span id="5-luồng-hoạt-động--kịch-bản-chi-tiết-business-flow" style="color:red;">🔄 5. Luồng hoạt động & Kịch bản chi tiết (Business Flow)</span>
 
-Do đặc thù giá trị hàng hóa lớn, dự án **Swiftera** được thiết kế tuân thủ nghiêm ngặt **Luật Thương mại điện tử Việt Nam (Luật số: 122/2025/QH15)** và các quy định liên quan:
+Dự án vận hành theo quy trình khép kín **Online to Offline (O2O)**:
 
-### 5.1. Giấy phép hoạt động (Điều 14 - Luật TMĐT 2025)
+### 📍 Giai đoạn 1: Đặt hàng & Thanh toán (Khách hàng làm Online)
+1. **Booking:** Renter chọn thiết bị rảnh trong khoảng ngày mong muốn và chọn Hub (Trạm) gần nhất để lấy đồ.
+2. **Định danh (e-KYC):** Hệ thống yêu cầu tải lên ảnh CCCD (2 mặt) và ảnh Selfie nếu là khách hàng mới. *(Khách hàng cũ được bỏ qua bước này).*
+3. **Thanh toán:** Trả trước 100% Tiền thuê + Tiền cọc qua VNPAY. 
+4. **Ghi nhận:** Đơn hàng chuyển trạng thái `PENDING_PICKUP` (Chờ nhận máy). Lịch trống của máy bị khóa lại.
 
-- Hệ thống hoạt động dưới mô hình **Sàn giao dịch TMĐT** (trung gian kết nối người cho thuê và người thuê).
-- Chủ quản nền tảng tuân thủ quy định đăng ký và khai báo pháp nhân với Bộ Công Thương (gắn logo xanh "Đã đăng ký Bộ Công Thương").
+### 📍 Giai đoạn 2: Bàn giao thiết bị & Ký Hợp đồng (Nhân viên làm Offline tại Hub)
+1. **Check-in:** Khách đến Hub. Nhân viên dùng điện thoại mở `Staff Portal`, đối chiếu thẻ CCCD gốc của khách với dữ liệu e-KYC trên hệ thống.
+2. **Chụp ảnh Đồng kiểm:** Nhân viên dùng camera trên `Staff Portal` chụp lại ngoại hình hiện tại của máy và upload lên hệ thống (Làm bằng chứng pháp lý).
+3. **Ký Hợp đồng bằng OTP (Click-wrap Agreement):** Trên Staff Portal hiển thị Checkbox: `[x] Khách hàng xác nhận tình trạng máy và nhận bàn giao`. 
+   * Hệ thống gửi mã OTP gồm 6 số về email/điện thoại Khách hàng. Khách đọc mã cho Nhân viên nhập vào hệ thống để chốt Hợp đồng điện tử.
+4. **Bàn giao:** Đơn hàng chuyển sang `ACTIVE` (Đang thuê).
 
-### 5.2. Giải quyết Tranh chấp & Trách nhiệm Chủ sàn (Điều 15 & 17)
+### 📍 Giai đoạn 3: Trả máy & Khấu trừ (Offline tại Hub)
+1. **Check-out:** Khách mang máy ra Hub. Nhân viên mở lại đơn hàng, đối chiếu ngoại hình máy với hình ảnh đã chụp ở Giai đoạn 2.
+2. **Bảo mật dữ liệu:** Nhân viên thực hiện **Factory Reset** (Khôi phục cài đặt gốc) xóa sạch hình ảnh/tài khoản trên thiết bị ngay trước mặt khách.
+3. **Hoàn cọc (Refund):**
+   * 🟢 **Máy an toàn:** Nhân viên bấm duyệt, hệ thống gọi API hoàn trả 100% Tiền cọc về tài khoản khách. Trạng thái `COMPLETED`.
+   * 🔴 **Máy hỏng hóc:** Nhân viên chụp ảnh vết xước mới, nhập số tiền phạt. Khách nhận OTP xác nhận đền bù. Hệ thống tự động khấu trừ phí phạt và chỉ hoàn lại phần tiền cọc còn dư.
 
-- Sàn cung cấp cơ chế tiếp nhận khiếu nại trực tuyến.
-- Tích hợp **AI Computer Vision**: Chụp ảnh máy trước và sau khi thuê. Nếu xảy ra tranh chấp xước xát/hỏng hóc, AI sẽ so sánh ảnh làm bằng chứng điện tử để Admin quyết định trừ tiền cọc đền bù (tranh chấp dân sự), đảm bảo tính công bằng và miễn trừ trách nhiệm pháp lý liên đới cho chủ sàn.
-
-### 5.3. Ngăn chặn Lạm dụng tín nhiệm chiếm đoạt tài sản (Hình sự)
-
-- Để phòng chống việc Renter thuê đồ rồi mang đi cầm đồ/bán trộm, hệ thống yêu cầu bắt buộc **e-KYC (Xác thực Căn cước công dân)** liên kết dữ liệu định danh.
-- Tích hợp cơ chế **Đặt cọc (Deposit)** qua cổng thanh toán/thẻ tín dụng thay vì niềm tin thông thường, tạo rào cản tài chính đối với các hành vi gian lận.
-
-### 5.4. Bảo vệ dữ liệu cá nhân (Nghị định 13/2023/NĐ-CP)
-
-- Hệ thống bắt buộc người dùng tick chọn _"Đồng ý với chính sách xử lý dữ liệu cá nhân"_ khi thu thập CCCD.
-- Có hợp đồng điện tử yêu cầu Renter cam kết **Tự sao lưu và Xóa dữ liệu** (trên máy ảnh, laptop) trước khi trả máy; Sàn và Lessor được miễn trừ trách nhiệm về lộ lọt dữ liệu hậu giao dịch.
+### 📍 Giai đoạn 4: Hậu mãi (Online)
+Renter nhận thông báo đánh giá đơn hàng. Thiết bị được trả về kho ảo, sẵn sàng cho lịch Booking của khách hàng tiếp theo.
 
 ---
 
-## <span id="6-hướng-dẫn-sử-dụng--demo" style="color:red;">📽️ 6. Hướng dẫn sử dụng & Demo</span>
+## <span id="6-vấn-đề-pháp-lý--quản-trị-rủi-ro" style="color:red;">⚖️ 6. Vấn đề Pháp lý & Quản trị rủi ro</span>
+
+Mô hình B2C - O2O của Swiftera tuân thủ chặt chẽ hành lang pháp lý Việt Nam hiện hành:
+
+### 6.1. Hợp đồng điện tử & Chữ ký OTP hợp pháp
+- **Cơ sở:** **Khoản 3 Điều 22 Luật Giao dịch điện tử 2023** (Luật số 20/2023/QH15).
+- **Tuân thủ:** Việc loại bỏ thao tác vẽ chữ ký tay thiếu chính xác, thay thế bằng cơ chế xác nhận **Checkbox kết hợp nhập mã OTP** (xác thực thiết bị của khách hàng) tạo thành một *Chữ ký điện tử chuyên dùng* có giá trị pháp lý cao nhất, không thể chối bỏ.
+
+### 6.2. Giải quyết Tranh chấp Bồi thường (Dân sự)
+- **Cơ sở:** **Điều 482 Bộ luật Dân sự 2015** (Trả lại tài sản thuê).
+- **Tuân thủ:** Thao tác Nhân viên chụp ảnh upload lên hệ thống ngay trước khi bàn giao tạo ra "Bằng chứng điện tử" vững chắc. Khi có hỏng hóc, Swiftera có đủ căn cứ pháp lý để thực hiện khấu trừ tiền cọc theo barem đã ký.
+
+### 6.3. Phòng chống chiếm đoạt tài sản (Hình sự)
+- **Cơ sở:** **Điểm a, Khoản 1 Điều 175 Bộ luật Hình sự 2015**.
+- **Tuân thủ:** Hệ thống thu thập bắt buộc hình ảnh CCCD (e-KYC), ghi nhận IP thanh toán và hình ảnh Camera tại Hub. Đây là bộ hồ sơ chứng cứ Hình sự hoàn chỉnh giúp doanh nghiệp nhờ Cơ quan Công an can thiệp nếu khách hàng có ý định bỏ trốn hoặc mang thiết bị đi cầm đồ.
+
+### 6.4. Bảo vệ dữ liệu cá nhân (Quyền riêng tư)
+- **Cơ sở:** **Điều 11 Nghị định 13/2023/NĐ-CP** (Bảo vệ dữ liệu cá nhân) và **Điều 16 Luật Bảo vệ quyền lợi người tiêu dùng 2023**.
+- **Tuân thủ:** 1. Yêu cầu Renter tick chọn "Đồng ý xử lý dữ liệu" trước khi tải CCCD.
+  2. Tại Hub, Nhân viên bị áp Check-list bắt buộc phải thực hiện **Factory Reset (Xóa trắng dữ liệu trên thiết bị)** trước khi cho khách mới thuê, bảo vệ tuyệt đối thông tin nhạy cảm của khách thuê trước đó.
+
+---
+
+## <span id="7-hướng-dẫn-sử-dụng--demo" style="color:red;">📽️ 7. Hướng dẫn sử dụng & Demo</span>
 
 Xem ngay video hướng dẫn sử dụng và Demo hệ thống Swiftera: [https://www.youtube.com/watch?v=SwifteraDemo](https://www.youtube.com/watch?v=SwifteraDemo)
 
 ---
 
-## <span id="7-nguyên-tắc-làm-việc" style="color:red;">📏 7. Nguyên tắc làm việc</span>
+## <span id="8-nguyên-tắc-làm-việc" style="color:red;">📏 8. Nguyên tắc làm việc</span>
 
 ### 🟢 **Commit Convention (Quy ước khi commit code lên GitHub)**
 
@@ -183,7 +196,7 @@ Xem ngay video hướng dẫn sử dụng và Demo hệ thống Swiftera: [https
 
 **Quy ước**: Tên nhánh ngắn gọn, rõ ràng, không dùng ký tự đặc biệt hay viết hoa.
 
-**Ví dụ**: `feature/add-zustand-store`, `bugfix/calendar-conflict`
+**Ví dụ**: `feature/add-staff-portal`, `bugfix/calendar-conflict`
 
 ### 🎨 **Cấu hình Prettier**
 
@@ -195,4 +208,3 @@ Xem ngay video hướng dẫn sử dụng và Demo hệ thống Swiftera: [https
     "prettier.singleQuote": true,
     "prettier.semi": true
 }
-```
