@@ -89,29 +89,29 @@ Swiftera hiện là một hệ thống thuê thiết bị công nghệ theo mô 
 
 ### 4.1. Bảo mật (xác thực, phân quyền) & Tài khoản người dùng
 
-Hệ thống cho phép người dùng đăng ký tài khoản, xác thực email, đăng nhập, đăng xuất, làm mới phiên đăng nhập và khôi phục mật khẩu khi quên. Sau khi đăng nhập thành công, người dùng có thể xem thông tin tài khoản hiện tại, cập nhật hồ sơ cá nhân, đổi mật khẩu và yêu cầu thay đổi email.
+- Hệ thống cho phép người dùng đăng ký tài khoản, xác thực email, đăng nhập, đăng xuất, làm mới phiên đăng nhập và khôi phục mật khẩu khi quên. Sau khi đăng nhập thành công, người dùng có thể xem thông tin tài khoản hiện tại, cập nhật hồ sơ cá nhân, đổi mật khẩu và yêu cầu thay đổi email.
 
-Hệ thống còn hỗ trợ quản lý người dùng theo vai trò và quyền hạn khác nhau. Nhờ đó khách hàng, nhân viên vận hành và quản trị viên không dùng chung một mức quyền như nhau.
+- Hệ thống còn hỗ trợ quản lý người dùng theo vai trò và quyền hạn khác nhau. Nhờ đó khách hàng, nhân viên vận hành và quản trị viên không dùng chung một mức quyền như nhau.
 
 ### 4.2. Tìm kiếm, lọc, sắp xếp và duyệt thiết bị cần thuê
 
-Người dùng có thể xem danh mục sản phẩm, mở danh sách sản phẩm và duyệt cây danh mục để tìm đúng nhóm thiết bị cần thuê. Hệ thống backend hỗ trợ list có phân trang, lọc và sắp xếp nên phía frontend có thể xây dựng các trải nghiệm như tìm kiếm theo tên, lọc theo danh mục, lọc theo trạng thái hiển thị, hoặc sắp xếp theo tiêu chí phù hợp với nhu cầu người dùng.
+- Người dùng có thể xem danh mục sản phẩm, mở danh sách sản phẩm và duyệt cây danh mục để tìm đúng nhóm thiết bị cần thuê. Hệ thống backend hỗ trợ list có phân trang, lọc và sắp xếp nên phía frontend có thể xây dựng các trải nghiệm như tìm kiếm theo tên, lọc theo danh mục, lọc theo trạng thái hiển thị, hoặc sắp xếp theo tiêu chí phù hợp với nhu cầu người dùng.
 
-Ngoài việc xem danh sách, người dùng còn có thể xem chi tiết từng sản phẩm với dữ liệu đầy đủ hơn như hình ảnh, mức giá hiện tại, giá cũ tham chiếu, số lượng khả dụng và điểm đánh giá trung bình. Vì vậy, trải nghiệm duyệt thiết bị trong hệ thống hiện tại không chỉ là liệt kê tên sản phẩm, mà đã có đủ thông tin để khách đưa ra quyết định thuê. 
+- Ngoài việc xem danh sách, người dùng còn có thể xem chi tiết từng sản phẩm với dữ liệu đầy đủ hơn như hình ảnh, mức giá hiện tại, giá cũ tham chiếu, số lượng khả dụng và điểm đánh giá trung bình. Vì vậy, trải nghiệm duyệt thiết bị trong hệ thống hiện tại không chỉ là liệt kê tên sản phẩm, mà đã có đủ thông tin để khách đưa ra quyết định thuê. 
 
 ### 4.3. Ảnh sản phẩm và trải nghiệm hiển thị
 
-Mỗi sản phẩm có thể có nhiều ảnh, có ảnh chính và thứ tự hiển thị rõ ràng. Phần backend hỗ trợ tải ảnh sản phẩm lên, lưu trữ và xoá ảnh sản phẩm khi cần. Ở phía giao diện có thể hiển thị tốt trên nhiều loại thiết bị (responsive) như deskstop, mobile.
+- Mỗi sản phẩm có thể có nhiều ảnh, có ảnh chính và thứ tự hiển thị rõ ràng. Phần backend hỗ trợ tải ảnh sản phẩm lên, lưu trữ và xoá ảnh sản phẩm khi cần. Ở phía giao diện có thể hiển thị tốt trên nhiều loại thiết bị (responsive) như deskstop, mobile.
 
 ### 4.4. Hub, vị trí giao nhận và tích hợp bản đồ
 
-Hệ thống có phần quản lý hub, đồng thời cho phép người dùng xem danh sách hub đang hoạt động ở khu vực công khai. Frontend hiển thị điểm giao nhận hoặc điểm vận hành trên bản đồ Goong Map cho người dùng. Điểm quan trọng ở đây là hub trong Swiftera không chỉ là thông tin tham khảo mà nó còn là một phần của vận hành nội bộ, vì đơn thuê có thể được gán về hub cụ thể để xử lý.
+- Hệ thống có phần quản lý hub, đồng thời cho phép người dùng xem danh sách hub đang hoạt động ở khu vực công khai. Frontend hiển thị điểm giao nhận hoặc điểm vận hành trên bản đồ Goong Map cho người dùng. Điểm quan trọng ở đây là hub trong Swiftera không chỉ là thông tin tham khảo mà nó còn là một phần của vận hành nội bộ, vì đơn thuê có thể được gán về hub cụ thể để xử lý.
 
 ### 4.5. Giỏ thuê thiết bị
 
-Hệ thống có giỏ hàng riêng cho từng người dùng. Người dùng có thể mở giỏ, thêm sản phẩm vào giỏ, sửa dòng giỏ, xóa từng dòng hoặc xóa toàn bộ giỏ. Khi thao tác với giỏ, hệ thống kiểm tra ngay những điều kiện quan trọng như sản phẩm còn đang được mở cho thuê hay không, thời gian thuê có hợp lệ hay không, số ngày thuê có đủ theo quy định tối thiểu của sản phẩm hay không, và số lượng có hợp lý hay không. 
+- Hệ thống có giỏ hàng riêng cho từng người dùng. Người dùng có thể mở giỏ, thêm sản phẩm vào giỏ, sửa dòng giỏ, xóa từng dòng hoặc xóa toàn bộ giỏ. Khi thao tác với giỏ, hệ thống kiểm tra ngay những điều kiện quan trọng như sản phẩm còn đang được mở cho thuê hay không, thời gian thuê có hợp lệ hay không, số ngày thuê có đủ theo quy định tối thiểu của sản phẩm hay không, và số lượng có hợp lý hay không. 
 
-Đây là bước chuẩn bị dữ liệu trước khi tạo đơn thuê thật. Hệ thống còn hỗ trợ trả về hình ảnh sản phẩm đại diện và giá trị tạm tính của từng dòng để frontend hiển thị dễ hiểu hơn cho khách hàng.
+> Đây là bước chuẩn bị dữ liệu trước khi tạo đơn thuê thật. Hệ thống còn hỗ trợ trả về hình ảnh sản phẩm đại diện và giá trị tạm tính của từng dòng để frontend hiển thị dễ hiểu hơn cho khách hàng.
 
 ### 4.6. Tạo đơn thuê và ghi nhận thông tin tại thời điểm đặt
 
