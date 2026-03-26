@@ -155,7 +155,7 @@
 
 ---
 
-## <span id="#5-luồng-hoạt-động-chi-tiết" style="color:red;">🔄 5. Luồng hoạt động & Kịch bản chi tiết (Business Flow)</span>
+## <span id="5-luồng-hoạt-động-chi-tiết" style="color:red;">🔄 5. Luồng hoạt động & Kịch bản chi tiết (Business Flow)</span>
 
 > Luồng hoạt động hiện tại của Swiftera: khách hàng thao tác online để chọn và đặt thuê thiết bị, còn doanh nghiệp tiếp tục xử lý đơn qua các bước vận hành thực tế cho đến khi món hàng được giao, sử dụng, thu hồi và hoàn tất.
 
