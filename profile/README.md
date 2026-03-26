@@ -85,7 +85,7 @@
 
 ## <span id="4-các-tính-năng-chính-bám-sát-yêu-cầu-đề-bài" style="color:red;">🎯 4. Các tính năng chính</span>
 
-Swiftera hiện là một hệ thống thuê thiết bị công nghệ theo mô hình khách hàng đặt thuê online, sau đó doanh nghiệp tiếp tục xử lý các bước giao nhận và vận hành thực tế. Hệ thống đã bao phủ các nhóm chức năng cốt lõi như lọc, tìm kiếm, đăng nhập, giỏ hàng, thanh toán, ảnh sản phẩm, liên hệ/hỗ trợ, khuyến mại, bản đồ, đánh giá sản phẩm, trang quản trị, quản lý hợp đồng, điều khoản và vòng đời đơn thuê.
+> Swiftera hiện là một hệ thống thuê thiết bị công nghệ theo mô hình khách hàng đặt thuê online, sau đó doanh nghiệp tiếp tục xử lý các bước giao nhận và vận hành thực tế. Hệ thống đã bao phủ các nhóm chức năng cốt lõi như lọc, tìm kiếm, đăng nhập, giỏ hàng, thanh toán, ảnh sản phẩm, liên hệ/hỗ trợ, khuyến mại, bản đồ, đánh giá sản phẩm, trang quản trị, quản lý hợp đồng, điều khoản và vòng đời đơn thuê.
 
 ### 4.1. Bảo mật (xác thực, phân quyền) & Tài khoản người dùng
 
@@ -111,53 +111,53 @@ Swiftera hiện là một hệ thống thuê thiết bị công nghệ theo mô 
 
 - Hệ thống có giỏ hàng riêng cho từng người dùng. Người dùng có thể mở giỏ, thêm sản phẩm vào giỏ, sửa dòng giỏ, xóa từng dòng hoặc xóa toàn bộ giỏ. Khi thao tác với giỏ, hệ thống kiểm tra ngay những điều kiện quan trọng như sản phẩm còn đang được mở cho thuê hay không, thời gian thuê có hợp lệ hay không, số ngày thuê có đủ theo quy định tối thiểu của sản phẩm hay không, và số lượng có hợp lý hay không. 
 
-> Đây là bước chuẩn bị dữ liệu trước khi tạo đơn thuê thật. Hệ thống còn hỗ trợ trả về hình ảnh sản phẩm đại diện và giá trị tạm tính của từng dòng để frontend hiển thị dễ hiểu hơn cho khách hàng.
+- Đây là bước chuẩn bị dữ liệu trước khi tạo đơn thuê thật. Hệ thống còn hỗ trợ trả về hình ảnh sản phẩm đại diện và giá trị tạm tính của từng dòng để frontend hiển thị dễ hiểu hơn cho khách hàng.
 
 ### 4.6. Tạo đơn thuê và ghi nhận thông tin tại thời điểm đặt
 
-Khi khách hàng xác nhận đặt thuê, hệ thống tạo đơn thuê chính thức và lưu lại những thông tin quan trọng của giao dịch tại đúng thời điểm khách chốt đơn. Điều này giúp dữ liệu đơn thuê không bị thay đổi theo các cập nhật sau đó của sản phẩm hoặc chương trình ưu đãi. Đây là một chức năng rất quan trọng trong mô hình cho thuê, vì nó giúp giảm tranh chấp về sau và giữ cho đơn hàng phản ánh đúng những gì khách đã đồng ý ban đầu. 
+- Khi khách hàng xác nhận đặt thuê, hệ thống tạo đơn thuê chính thức và lưu lại những thông tin quan trọng của giao dịch tại đúng thời điểm khách chốt đơn. Điều này giúp dữ liệu đơn thuê không bị thay đổi theo các cập nhật sau đó của sản phẩm hoặc chương trình ưu đãi. Đây là một chức năng rất quan trọng trong mô hình cho thuê, vì nó giúp giảm tranh chấp về sau và giữ cho đơn hàng phản ánh đúng những gì khách đã đồng ý ban đầu. 
 
-Ngoài ra, hệ thống hiện còn hỗ trợ xem chi tiết đơn thuê, xem danh sách đơn của bản thân và quản lý đơn ở phía nội bộ. Nhờ vậy, đơn thuê không phải một bản ghi tạo xong rồi bỏ đó, mà là trung tâm của toàn bộ vòng đời nghiệp vụ phía sau. 
+- Ngoài ra, hệ thống hiện còn hỗ trợ xem chi tiết đơn thuê, xem danh sách đơn của bản thân và quản lý đơn ở phía nội bộ. Nhờ vậy, đơn thuê không phải một bản ghi tạo xong rồi bỏ đó, mà là trung tâm của toàn bộ vòng đời nghiệp vụ phía sau. 
 
 ### 4.7. Giữ chỗ thiết bị thực tế và chống đặt trùng
 
-Swiftera không chỉ quản lý theo tên sản phẩm, mà còn quản lý cả thiết bị thật theo từng serial riêng. Khi tạo đơn, hệ thống sẽ tự chọn thiết bị còn sẵn và giữ chỗ ngay để tránh việc hai khách cùng đặt trùng một món hàng vật lý. Cơ chế này là nền tảng để vận hành mô hình thuê thiết bị ngoài thực tế, nơi mỗi món hàng có vòng đời sử dụng lặp đi lặp lại qua nhiều đơn khác nhau. 
+- Swiftera không chỉ quản lý theo tên sản phẩm, mà còn quản lý cả thiết bị thật theo từng serial riêng. Khi tạo đơn, hệ thống sẽ tự chọn thiết bị còn sẵn và giữ chỗ ngay để tránh việc hai khách cùng đặt trùng một món hàng vật lý. Cơ chế này là nền tảng để vận hành mô hình thuê thiết bị ngoài thực tế, nơi mỗi món hàng có vòng đời sử dụng lặp đi lặp lại qua nhiều đơn khác nhau. 
 
 ### 4.8. Thanh toán trực tuyến
 
-Swiftera có hỗ trợ thanh toán online qua VNPay. Hệ thống tạo giao dịch thanh toán riêng cho đơn thuê, chuyển khách sang cổng thanh toán, nhận kết quả từ VNPay và chỉ khi kiểm tra dữ liệu hợp lệ thì mới xác nhận đơn đã thanh toán.
+- Swiftera có hỗ trợ thanh toán online qua VNPay. Hệ thống tạo giao dịch thanh toán riêng cho đơn thuê, chuyển khách sang cổng thanh toán, nhận kết quả từ VNPay và chỉ khi kiểm tra dữ liệu hợp lệ thì mới xác nhận đơn đã thanh toán.
 
 ### 4.9. Khuyến mại, giá mới và giá cũ
 
-Hệ thống có hỗ trợ voucher giảm giá với các điều kiện cụ thể như thời hạn còn hiệu lực, số lượt sử dụng, số ngày thuê tối thiểu và giới hạn mức giảm. Ngoài ra, dữ liệu sản phẩm còn có giá hiện tại và giá cũ tham chiếu để frontend hiển thị (thường để kích thích mua hàng).
+- Hệ thống có hỗ trợ voucher giảm giá với các điều kiện cụ thể như thời hạn còn hiệu lực, số lượt sử dụng, số ngày thuê tối thiểu và giới hạn mức giảm. Ngoài ra, dữ liệu sản phẩm còn có giá hiện tại và giá cũ tham chiếu để frontend hiển thị (thường để kích thích mua hàng).
 
 ### 4.10. Điều khoản, chính sách đổi trả, bảo hành, vận chuyển và hợp đồng
 
-Trong hệ thống hiện tại, phần này được hiện thực theo hướng quản lý `PolicyDocument`, cho phép công khai nội dung policy, lấy policy mới nhất theo mã, lưu việc người dùng đã đồng ý với điều khoản, và chỉ cho phép tạo hợp đồng khi các điều kiện liên quan đến policy đã đạt. Vì vậy, thay vì chỉ hiển thị các trang chính sách tĩnh, Swiftera đang quản lý điều khoản/chính sách như một phần nghiệp vụ có kiểm soát.
+- Trong hệ thống hiện tại, phần này được hiện thực theo hướng quản lý `PolicyDocument`, cho phép công khai nội dung policy, lấy policy mới nhất theo mã, lưu việc người dùng đã đồng ý với điều khoản, và chỉ cho phép tạo hợp đồng khi các điều kiện liên quan đến policy đã đạt. Vì vậy, thay vì chỉ hiển thị các trang chính sách tĩnh, Swiftera đang quản lý điều khoản/chính sách như một phần nghiệp vụ có kiểm soát.
 
-Nghĩa là các nội dung như chính sách vận chuyển, điều khoản thuê, quy định xử lý sau thuê hoặc các ràng buộc liên quan có thể được quản lý tập trung theo phiên bản. Khi đi vào flow thực tế, người dùng còn cần chấp thuận điều khoản rồi hệ thống mới cho tạo hợp đồng thuê. Đây là điểm mà Swiftera vượt khỏi mức một website thương mại điện tử thông thường và tiến gần hơn đến một nền tảng giao dịch có ràng buộc rõ ràng. 
+- Nghĩa là các nội dung như chính sách vận chuyển, điều khoản thuê, quy định xử lý sau thuê hoặc các ràng buộc liên quan có thể được quản lý tập trung theo phiên bản. Khi đi vào flow thực tế, người dùng còn cần chấp thuận điều khoản rồi hệ thống mới cho tạo hợp đồng thuê. Đây là điểm mà Swiftera vượt khỏi mức một website thương mại điện tử thông thường và tiến gần hơn đến một nền tảng giao dịch có ràng buộc rõ ràng. 
 
 ### 4.11. Quản lý vòng đời đơn thuê sau khi khách đã thanh toán
 
-Sau khi thanh toán thành công, hệ thống tiếp tục hỗ trợ phần vận hành: xác nhận đơn, gán hub, gán nhân sự giao/thu hồi, ghi nhận giao hàng, ghi nhận thu hồi và xử lý khoản phạt nếu có hư hại hoặc mất mát. Swiftera không chỉ giúp khách đặt thuê mà còn giúp doanh nghiệp quản lý việc cho thuê trong suốt vòng đời thực tế của món hàng. Khi món hàng đã rời kho, đang ở khách hay vừa được nhận lại, hệ thống vẫn theo dõi được trạng thái và cho phép nhân sự nội bộ xử lý đúng bước.
+- Sau khi thanh toán thành công, hệ thống tiếp tục hỗ trợ phần vận hành: xác nhận đơn, gán hub, gán nhân sự giao/thu hồi, ghi nhận giao hàng, ghi nhận thu hồi và xử lý khoản phạt nếu có hư hại hoặc mất mát. Swiftera không chỉ giúp khách đặt thuê mà còn giúp doanh nghiệp quản lý việc cho thuê trong suốt vòng đời thực tế của món hàng. Khi món hàng đã rời kho, đang ở khách hay vừa được nhận lại, hệ thống vẫn theo dõi được trạng thái và cho phép nhân sự nội bộ xử lý đúng bước.
 
 ### 4.12. Đánh giá sản phẩm và phần phản hồi sau thuê
 
-Swiftera có phần đánh giá sản phẩm sau thuê. Chỉ người đã thực sự hoàn tất đơn thuê mới được đánh giá món hàng mình đã sử dụng. Nhờ đó, phần nhận xét về sản phẩm có độ tin cậy cao hơn. Về phần bình luận (feedback), hệ thống hiện thể hiện rõ nhất qua hai hướng: đánh giá sản phẩm sau khi thuê và ticket hỗ trợ/feedback gửi về doanh nghiệp.
+- Swiftera có phần đánh giá sản phẩm sau thuê. Chỉ người đã thực sự hoàn tất đơn thuê mới được đánh giá món hàng mình đã sử dụng. Nhờ đó, phần nhận xét về sản phẩm có độ tin cậy cao hơn. Về phần bình luận (feedback), hệ thống hiện thể hiện rõ nhất qua hai hướng: đánh giá sản phẩm sau khi thuê và ticket hỗ trợ/feedback gửi về doanh nghiệp.
 
 ### 4.13. Liên hệ và hỗ trợ khách hàng
 
-Hệ thống hỗ trợ tạo ticket liên hệ/hỗ trợ cho cả người dùng đã đăng nhập. Sau khi nhận ticket, phía vận hành có thể phản hồi và đóng ticket khi xử lý xong. Ticket có thể gắn với đơn thuê, giúp doanh nghiệp xử lý các vấn đề phát sinh sau khi giao hàng, trong quá trình khách sử dụng hoặc sau khi trả hàng.
+- Hệ thống hỗ trợ tạo ticket liên hệ/hỗ trợ cho cả người dùng đã đăng nhập. Sau khi nhận ticket, phía vận hành có thể phản hồi và đóng ticket khi xử lý xong. Ticket có thể gắn với đơn thuê, giúp doanh nghiệp xử lý các vấn đề phát sinh sau khi giao hàng, trong quá trình khách sử dụng hoặc sau khi trả hàng.
 
 ### 4.14. Quản trị nội bộ
 
-Hệ thống có khu vực quản trị đủ rộng để quản lý người dùng, vai trò, quyền hạn, danh mục, sản phẩm, ảnh sản phẩm, thiết bị thực tế theo serial, hub, voucher, đơn thuê, giao dịch thanh toán, điều khoản/chính sách, hợp đồng và ticket hỗ trợ dành cho admin và nhân viên nội bộ (dashboard).
+- Hệ thống có khu vực quản trị đủ rộng để quản lý người dùng, vai trò, quyền hạn, danh mục, sản phẩm, ảnh sản phẩm, thiết bị thực tế theo serial, hub, voucher, đơn thuê, giao dịch thanh toán, điều khoản/chính sách, hợp đồng và ticket hỗ trợ dành cho admin và nhân viên nội bộ (dashboard).
 
 ---
 
 ## <span id="5-luồng-hoạt-động--kịch-bản-chi-tiết-business-flow" style="color:red;">🔄 5. Luồng hoạt động & Kịch bản chi tiết (Business Flow)</span>
 
-Luồng hoạt động hiện tại của Swiftera: khách hàng thao tác online để chọn và đặt thuê thiết bị, còn doanh nghiệp tiếp tục xử lý đơn qua các bước vận hành thực tế cho đến khi món hàng được giao, sử dụng, thu hồi và hoàn tất.
+> Luồng hoạt động hiện tại của Swiftera: khách hàng thao tác online để chọn và đặt thuê thiết bị, còn doanh nghiệp tiếp tục xử lý đơn qua các bước vận hành thực tế cho đến khi món hàng được giao, sử dụng, thu hồi và hoàn tất.
 
 ### 5.1. Bước 1: Người dùng tạo tài khoản và bắt đầu phiên sử dụng
 
@@ -219,7 +219,7 @@ Khi mọi việc đã hoàn thành, đơn được đóng lại ở trạng thá
 
 ## <span id="6-vấn-đề-pháp-lý--quản-trị-rủi-ro" style="color:red;">⚖️ 6. Vấn đề Pháp lý & Quản trị rủi ro</span>
 
-Swiftera không chỉ là một hệ thống có chức năng đặt thuê thiết bị, mà còn có cấu trúc kiểm soát rủi ro tương đối rõ cho một mô hình vận hành thật. Các lớp kiểm soát hiện tại thể hiện qua xác thực tài khoản, quản lý điều khoản, hợp đồng, thanh toán, quản lý tài sản theo từng món thực tế, kiểm soát vòng đời đơn và phân quyền nội bộ. 
+> Swiftera không chỉ là một hệ thống có chức năng đặt thuê thiết bị, mà còn có cấu trúc kiểm soát rủi ro tương đối rõ cho một mô hình vận hành thật. Các lớp kiểm soát hiện tại thể hiện qua xác thực tài khoản, quản lý điều khoản, hợp đồng, thanh toán, quản lý tài sản theo từng món thực tế, kiểm soát vòng đời đơn và phân quyền nội bộ. 
 
 ### 6.1. Kiểm soát danh tính người dùng và quyền truy cập
 
