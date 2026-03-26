@@ -85,299 +85,185 @@
 
 ## <span id="4-các-tính-năng-chính-bám-sát-yêu-cầu-đề-bài" style="color:red;">🎯 4. Các tính năng chính</span>
 
-Swiftera  triển khai đầy đủ các nhóm chức năng cốt lõi cho một nền tảng thuê thiết bị công nghệ theo mô hình B2C kết hợp O2O, gồm quản lý danh mục sản phẩm, tồn kho theo serial, giỏ hàng, đơn thuê, thanh toán online, hợp đồng, policy/consent, đánh giá sản phẩm, ticket hỗ trợ và IAM nội bộ. :contentReference[oaicite:0]{index=0}
+Swiftera hiện là một hệ thống thuê thiết bị công nghệ theo mô hình khách hàng đặt thuê online, sau đó doanh nghiệp tiếp tục xử lý các bước giao nhận và vận hành thực tế. Hệ thống đã bao phủ các nhóm chức năng cốt lõi như lọc, tìm kiếm, đăng nhập, giỏ hàng, thanh toán, ảnh sản phẩm, liên hệ/hỗ trợ, khuyến mại, bản đồ, đánh giá sản phẩm, trang quản trị, quản lý hợp đồng, điều khoản và vòng đời đơn thuê.
 
-### 4.1. Quản lý tài khoản, xác thực và phân quyền
-- Hỗ trợ đăng ký tài khoản, xác thực email, đăng nhập, refresh token, quên mật khẩu và đăng xuất.
-- Hệ thống dùng JWT cho xác thực và quản lý refresh token ở DB.
-- Phân quyền nội bộ theo mô hình **User - Role - Permission**, trong đó permission được quản lý theo `apiPath + httpMethod + module`.
-- `PermissionInterceptor` kiểm tra quyền truy cập endpoint ở runtime. 
+### 4.1. Bảo mật (xác thực, phân quyền) & Tài khoản người dùng
 
-### 4.2. Quản lý danh mục, sản phẩm, hình ảnh và hub
-- Quản lý cây danh mục nhiều cấp (`Category`).
-- Quản lý sản phẩm cho thuê (`Product`) với các thông tin như tên, mô tả, giá thuê ngày, tiền cọc, số ngày thuê tối thiểu, trạng thái active.
-- Quản lý nhiều ảnh cho mỗi sản phẩm (`ProductImage`), có `sortOrder` và `isPrimary`.
-- Quản lý các hub vận hành/kho hàng (`Hub`) với mã hub, địa chỉ, tọa độ và trạng thái hoạt động. 
+Hệ thống cho phép người dùng đăng ký tài khoản, xác thực email, đăng nhập, đăng xuất, làm mới phiên đăng nhập và khôi phục mật khẩu khi quên. Sau khi đăng nhập thành công, người dùng có thể xem thông tin tài khoản hiện tại, cập nhật hồ sơ cá nhân, đổi mật khẩu và yêu cầu thay đổi email.
 
-### 4.3. Quản lý tồn kho vật lý theo serial
-- Mỗi tài sản vật lý được quản lý dưới dạng `InventoryItem` riêng theo serial number.
-- Mỗi item gắn với một product và một hub cụ thể.
-- Item có trạng thái vận hành như `AVAILABLE`, `RESERVED`, `RENTED` và các thông tin đánh giá tình trạng.
-- Đây là nền tảng để hệ thống chống overbooking và theo dõi vòng đời từng món hàng thực tế. 
+Hệ thống còn hỗ trợ quản lý người dùng theo vai trò và quyền hạn khác nhau. Nhờ đó khách hàng, nhân viên vận hành và quản trị viên không dùng chung một mức quyền như nhau.
 
-### 4.4. Giỏ hàng thuê thiết bị
-- Mỗi user có một giỏ hàng (`Cart`) riêng.
-- User có thể thêm dòng giỏ (`CartLine`), cập nhật, xóa từng dòng hoặc xóa toàn bộ giỏ.
-- `CartLine` hiện lưu sản phẩm, khoảng ngày thuê và số lượng.
-- Hệ thống kiểm tra nghiệp vụ khi thêm/cập nhật giỏ:
-  - sản phẩm phải còn active,
-  - khoảng ngày thuê phải hợp lệ,
-  - số ngày thuê phải lớn hơn hoặc bằng `minRentalDays`,
-  - `quantity >= 1`.
-- Response giỏ hàng trả thêm `productImageUrl` và `lineTotal` để frontend hiển thị thuận tiện. 
+### 4.2. Tìm kiếm, lọc, sắp xếp và duyệt thiết bị cần thuê
 
-### 4.5. Tạo đơn thuê và snapshot dữ liệu nghiệp vụ
-- Từ line items ở frontend, hệ thống tạo `RentalOrder` và `RentalOrderLine`.
-- Khi tạo đơn, backend snapshot các thông tin quan trọng để bảo toàn dữ liệu nghiệp vụ tại thời điểm đặt thuê, gồm:
-  - thông tin giao hàng,
-  - `voucherCodeSnapshot`,
-  - `productNameSnapshot`,
-  - `dailyPriceSnapshot`,
-  - `depositAmountSnapshot`.
-- Hệ thống tính các giá trị tiền thuê, giảm giá voucher và tiền cọc ngay tại bước tạo đơn. 
+Người dùng có thể xem danh mục sản phẩm, mở danh sách sản phẩm và duyệt cây danh mục để tìm đúng nhóm thiết bị cần thuê. Hệ thống backend hỗ trợ list có phân trang, lọc và sắp xếp nên phía frontend có thể xây dựng các trải nghiệm như tìm kiếm theo tên, lọc theo danh mục, lọc theo trạng thái hiển thị, hoặc sắp xếp theo tiêu chí phù hợp với nhu cầu người dùng.
 
-### 4.6. Chống overbooking và giữ chỗ tồn kho
-- Khi tạo đơn, hệ thống tự chọn `InventoryItem` đang khả dụng theo thứ tự FIFO (`createdAt ASC`).
-- Việc lấy inventory khả dụng có dùng lock pessimistic để giảm race condition.
-- Hệ thống reserve inventory ngay khi tạo order để tránh nhiều khách đặt trùng cùng một serial vật lý.
-- Nếu hủy đơn ở trạng thái cho phép, inventory sẽ được release về trạng thái khả dụng. 
+Ngoài việc xem danh sách, người dùng còn có thể xem chi tiết từng sản phẩm với dữ liệu đầy đủ hơn như hình ảnh, mức giá hiện tại, giá cũ tham chiếu, số lượng khả dụng và điểm đánh giá trung bình. Vì vậy, trải nghiệm duyệt thiết bị trong hệ thống hiện tại không chỉ là liệt kê tên sản phẩm, mà đã có đủ thông tin để khách đưa ra quyết định thuê. 
 
-### 4.7. Thanh toán online qua VNPay
-- Hệ thống khởi tạo `PaymentTransaction` riêng cho từng đơn thuê.
-- FE gọi API initiate payment để nhận URL thanh toán VNPay.
-- Backend xử lý callback IPN từ VNPay:
-  - verify checksum,
-  - đối chiếu số tiền,
-  - cập nhật transaction `SUCCESS` hoặc `FAILED`,
-  - cộng dồn `grandTotalPaid`,
-  - nếu đủ tiền thì chuyển đơn sang `PAID`.
-- Browser sau thanh toán được redirect về frontend qua endpoint return. 
+### 4.3. Ảnh sản phẩm và trải nghiệm hiển thị
 
-### 4.8. Vận hành vòng đời đơn thuê
-- Hệ thống quản lý vòng đời đơn bằng state machine.
-- Các thao tác vận hành chính đã có endpoint chuyên biệt:
-  - đổi trạng thái đơn,
-  - gán hub,
-  - gán nhân sự giao/thu hồi,
-  - ghi nhận giao hàng,
-  - ghi nhận thu hồi,
-  - set penalty khi có hư hại hoặc mất mát.
-- Khi giao hàng, inventory chuyển từ `RESERVED` sang `RENTED`.
-- Khi thu hồi, inventory chuyển từ `RENTED` hoặc `RESERVED` về `AVAILABLE`. 
+Mỗi sản phẩm có thể có nhiều ảnh, có ảnh chính và thứ tự hiển thị rõ ràng. Phần backend hỗ trợ tải ảnh sản phẩm lên, lưu trữ và xoá ảnh sản phẩm khi cần. Ở phía giao diện có thể hiển thị tốt trên nhiều loại thiết bị (responsive) như deskstop, mobile.
 
-### 4.9. Quản lý voucher và khuyến mại
-- Hệ thống hỗ trợ voucher giảm giá theo phần trăm hoặc cố định.
-- Voucher có các ràng buộc như:
-  - trạng thái active,
-  - thời hạn hiệu lực,
-  - giới hạn số lượt sử dụng,
-  - số ngày thuê tối thiểu,
-  - mức trần giảm giá nếu là dạng phần trăm.
-- `usedCount` của voucher được tăng/giảm theo lifecycle đơn thuê. 
+### 4.4. Hub, vị trí giao nhận và tích hợp bản đồ
 
-### 4.10. Policy, consent và hợp đồng thuê
-- Admin quản lý `PolicyDocument` theo `code` và `version`.
-- User phải consent policy trước khi tạo hợp đồng.
-- Hệ thống chỉ cho tạo `RentalContract` khi:
-  - order ở trạng thái `PAID` hoặc `PREPARING`,
-  - policy đang active và là bản latest theo code,
-  - user của order đã có consent `ACCEPTED`.
-- Mỗi order chỉ có một contract.
-- Khi tạo contract, backend tự sinh `contractNumber` và lưu metadata xác nhận như IP/User-Agent. 
+Hệ thống có phần quản lý hub, đồng thời cho phép người dùng xem danh sách hub đang hoạt động ở khu vực công khai. Frontend hiển thị điểm giao nhận hoặc điểm vận hành trên bản đồ Goong Map cho người dùng. Điểm quan trọng ở đây là hub trong Swiftera không chỉ là thông tin tham khảo mà nó còn là một phần của vận hành nội bộ, vì đơn thuê có thể được gán về hub cụ thể để xử lý.
 
-### 4.11. Đánh giá sản phẩm và hỗ trợ khách hàng
-- Sau khi đơn `COMPLETED`, user có thể tạo review cho sản phẩm đã thuê.
-- Rule nghiệp vụ:
-  - chỉ owner của order được review,
-  - product phải thuộc order,
-  - chặn duplicate review trên cùng cặp `(order, user, product)`.
-- Hệ thống cũng hỗ trợ `ContactTicket` cho user hoặc guest, cho phép Staff/Admin phản hồi và đóng ticket khi xử lý xong. 
+### 4.5. Giỏ thuê thiết bị
 
-### 4.12. Quản trị nội bộ cho Admin/Staff
-- Admin/Staff có thể quản lý:
-  - users, roles, permissions,
-  - categories, hubs, products, product images,
-  - inventory items,
-  - vouchers,
-  - rental orders,
-  - payment transactions,
-  - policy documents,
-  - contact tickets.
-- Đây là lớp vận hành nội bộ chính của hệ thống hiện tại. 
+Hệ thống có giỏ hàng riêng cho từng người dùng. Người dùng có thể mở giỏ, thêm sản phẩm vào giỏ, sửa dòng giỏ, xóa từng dòng hoặc xóa toàn bộ giỏ. Khi thao tác với giỏ, hệ thống kiểm tra ngay những điều kiện quan trọng như sản phẩm còn đang được mở cho thuê hay không, thời gian thuê có hợp lệ hay không, số ngày thuê có đủ theo quy định tối thiểu của sản phẩm hay không, và số lượng có hợp lý hay không. 
+
+Đây là bước chuẩn bị dữ liệu trước khi tạo đơn thuê thật. Hệ thống còn hỗ trợ trả về hình ảnh sản phẩm đại diện và giá trị tạm tính của từng dòng để frontend hiển thị dễ hiểu hơn cho khách hàng.
+
+### 4.6. Tạo đơn thuê và ghi nhận thông tin tại thời điểm đặt
+
+Khi khách hàng xác nhận đặt thuê, hệ thống tạo đơn thuê chính thức và lưu lại những thông tin quan trọng của giao dịch tại đúng thời điểm khách chốt đơn. Điều này giúp dữ liệu đơn thuê không bị thay đổi theo các cập nhật sau đó của sản phẩm hoặc chương trình ưu đãi. Đây là một chức năng rất quan trọng trong mô hình cho thuê, vì nó giúp giảm tranh chấp về sau và giữ cho đơn hàng phản ánh đúng những gì khách đã đồng ý ban đầu. 
+
+Ngoài ra, hệ thống hiện còn hỗ trợ xem chi tiết đơn thuê, xem danh sách đơn của bản thân và quản lý đơn ở phía nội bộ. Nhờ vậy, đơn thuê không phải một bản ghi tạo xong rồi bỏ đó, mà là trung tâm của toàn bộ vòng đời nghiệp vụ phía sau. 
+
+### 4.7. Giữ chỗ thiết bị thực tế và chống đặt trùng
+
+Swiftera không chỉ quản lý theo tên sản phẩm, mà còn quản lý cả thiết bị thật theo từng serial riêng. Khi tạo đơn, hệ thống sẽ tự chọn thiết bị còn sẵn và giữ chỗ ngay để tránh việc hai khách cùng đặt trùng một món hàng vật lý. Cơ chế này là nền tảng để vận hành mô hình thuê thiết bị ngoài thực tế, nơi mỗi món hàng có vòng đời sử dụng lặp đi lặp lại qua nhiều đơn khác nhau. 
+
+### 4.8. Thanh toán trực tuyến
+
+Swiftera có hỗ trợ thanh toán online qua VNPay. Hệ thống tạo giao dịch thanh toán riêng cho đơn thuê, chuyển khách sang cổng thanh toán, nhận kết quả từ VNPay và chỉ khi kiểm tra dữ liệu hợp lệ thì mới xác nhận đơn đã thanh toán.
+
+### 4.9. Khuyến mại, giá mới và giá cũ
+
+Hệ thống có hỗ trợ voucher giảm giá với các điều kiện cụ thể như thời hạn còn hiệu lực, số lượt sử dụng, số ngày thuê tối thiểu và giới hạn mức giảm. Ngoài ra, dữ liệu sản phẩm còn có giá hiện tại và giá cũ tham chiếu để frontend hiển thị (thường để kích thích mua hàng).
+
+### 4.10. Điều khoản, chính sách đổi trả, bảo hành, vận chuyển và hợp đồng
+
+Trong hệ thống hiện tại, phần này được hiện thực theo hướng quản lý `PolicyDocument`, cho phép công khai nội dung policy, lấy policy mới nhất theo mã, lưu việc người dùng đã đồng ý với điều khoản, và chỉ cho phép tạo hợp đồng khi các điều kiện liên quan đến policy đã đạt. Vì vậy, thay vì chỉ hiển thị các trang chính sách tĩnh, Swiftera đang quản lý điều khoản/chính sách như một phần nghiệp vụ có kiểm soát.
+
+Nghĩa là các nội dung như chính sách vận chuyển, điều khoản thuê, quy định xử lý sau thuê hoặc các ràng buộc liên quan có thể được quản lý tập trung theo phiên bản. Khi đi vào flow thực tế, người dùng còn cần chấp thuận điều khoản rồi hệ thống mới cho tạo hợp đồng thuê. Đây là điểm mà Swiftera vượt khỏi mức một website thương mại điện tử thông thường và tiến gần hơn đến một nền tảng giao dịch có ràng buộc rõ ràng. 
+
+### 4.11. Quản lý vòng đời đơn thuê sau khi khách đã thanh toán
+
+Sau khi thanh toán thành công, hệ thống tiếp tục hỗ trợ phần vận hành: xác nhận đơn, gán hub, gán nhân sự giao/thu hồi, ghi nhận giao hàng, ghi nhận thu hồi và xử lý khoản phạt nếu có hư hại hoặc mất mát. Swiftera không chỉ giúp khách đặt thuê mà còn giúp doanh nghiệp quản lý việc cho thuê trong suốt vòng đời thực tế của món hàng. Khi món hàng đã rời kho, đang ở khách hay vừa được nhận lại, hệ thống vẫn theo dõi được trạng thái và cho phép nhân sự nội bộ xử lý đúng bước.
+
+### 4.12. Đánh giá sản phẩm và phần phản hồi sau thuê
+
+Swiftera có phần đánh giá sản phẩm sau thuê. Chỉ người đã thực sự hoàn tất đơn thuê mới được đánh giá món hàng mình đã sử dụng. Nhờ đó, phần nhận xét về sản phẩm có độ tin cậy cao hơn. Về phần bình luận (feedback), hệ thống hiện thể hiện rõ nhất qua hai hướng: đánh giá sản phẩm sau khi thuê và ticket hỗ trợ/feedback gửi về doanh nghiệp.
+
+### 4.13. Liên hệ và hỗ trợ khách hàng
+
+Hệ thống hỗ trợ tạo ticket liên hệ/hỗ trợ cho cả người dùng đã đăng nhập. Sau khi nhận ticket, phía vận hành có thể phản hồi và đóng ticket khi xử lý xong. Ticket có thể gắn với đơn thuê, giúp doanh nghiệp xử lý các vấn đề phát sinh sau khi giao hàng, trong quá trình khách sử dụng hoặc sau khi trả hàng.
+
+### 4.14. Quản trị nội bộ
+
+Hệ thống có khu vực quản trị đủ rộng để quản lý người dùng, vai trò, quyền hạn, danh mục, sản phẩm, ảnh sản phẩm, thiết bị thực tế theo serial, hub, voucher, đơn thuê, giao dịch thanh toán, điều khoản/chính sách, hợp đồng và ticket hỗ trợ dành cho admin và nhân viên nội bộ (dashboard).
 
 ---
 
 ## <span id="5-luồng-hoạt-động--kịch-bản-chi-tiết-business-flow" style="color:red;">🔄 5. Luồng hoạt động & Kịch bản chi tiết (Business Flow)</span>
 
-Luồng hoạt động hiện tại của hệ thống được thiết kế theo hướng: khách hàng duyệt sản phẩm và tạo đơn trên nền tảng online, sau đó khối vận hành nội bộ tiếp tục xử lý vòng đời đơn thuê theo state machine cho đến khi hoàn tất. 
+Luồng hoạt động hiện tại của Swiftera: khách hàng thao tác online để chọn và đặt thuê thiết bị, còn doanh nghiệp tiếp tục xử lý đơn qua các bước vận hành thực tế cho đến khi món hàng được giao, sử dụng, thu hồi và hoàn tất.
 
-### 5.1. Giai đoạn 1: Khách hàng đăng ký, xác thực và đăng nhập
-1. Người dùng đăng ký tài khoản.
-2. Hệ thống gửi email xác thực.
-3. Sau khi verify email thành công, user có thể đăng nhập.
-4. Hệ thống cấp access token và refresh token để sử dụng các endpoint cần xác thực. 
+### 5.1. Bước 1: Người dùng tạo tài khoản và bắt đầu phiên sử dụng
 
-### 5.2. Giai đoạn 2: Duyệt sản phẩm và chuẩn bị thuê
-1. User xem danh sách sản phẩm và danh mục.
-2. User xem chi tiết sản phẩm theo ID hoặc slug.
-3. User có thể xem hub công khai để tham khảo điểm vận hành/giao nhận.
-4. Từ dữ liệu sản phẩm và ảnh, frontend hiển thị thông tin cần thiết cho quyết định thuê. 
+Khách hàng đăng ký tài khoản, xác thực email rồi đăng nhập vào hệ thống. Sau khi đăng nhập thành công, hệ thống trả về thông tin cần thiết để người dùng bắt đầu sử dụng nền tảng. Nếu gặp sự cố như quên mật khẩu hoặc hết phiên đăng nhập, hệ thống cũng đã có các bước hỗ trợ để người dùng tiếp tục sử dụng mà không cần tạo lại tài khoản. 
 
-### 5.3. Giai đoạn 3: Tạo và quản lý giỏ hàng
-1. User mở giỏ bằng `GET /cart`; hệ thống sẽ lấy giỏ hiện có hoặc tự tạo mới nếu chưa tồn tại.
-2. User thêm dòng giỏ bằng `POST /cart/lines` với sản phẩm, khoảng ngày thuê và số lượng.
-3. User có thể cập nhật line bằng `PATCH /cart/lines/{cartLineId}` khi đổi lịch hoặc số lượng.
-4. User có thể xóa từng dòng hoặc clear toàn bộ giỏ. 
+### 5.2. Bước 2: Người dùng tìm thiết bị cần thuê
 
-### 5.4. Giai đoạn 4: Tạo đơn thuê và giữ chỗ inventory
-1. FE gửi `POST /rental-orders` từ danh sách line items cùng thông tin giao hàng và voucher code nếu có.
-2. Backend kiểm tra điều kiện nghiệp vụ của line items.
-3. Service snapshot dữ liệu quan trọng của order và order line.
-4. Hệ thống tính:
-   - số ngày thuê,
-   - subtotal,
-   - discount,
-   - tiền cọc,
-   - tổng tiền cần thanh toán.
-5. Backend chọn `InventoryItem` `AVAILABLE` theo FIFO và reserve hàng ngay khi tạo order.
-6. Đơn được tạo ở trạng thái `PENDING_PAYMENT`. 
+Sau khi vào hệ thống, người dùng xem danh mục, duyệt danh sách sản phẩm, xem chi tiết sản phẩm và tham khảo các hub đang hoạt động. Đây là giai đoạn người dùng tìm món phù hợp với nhu cầu. Ở bước này, frontend có thể triển khai tìm kiếm, lọc và sắp xếp dựa trên dữ liệu list/filter mà backend đang cung cấp. 
 
-### 5.5. Giai đoạn 5: Thanh toán qua VNPay
-1. FE gọi `POST /payments/{rentalOrderId}/initiate`.
-2. Backend tạo `PaymentTransaction` ở trạng thái `PENDING` và trả về payment URL.
-3. User thanh toán trên giao diện VNPay.
-4. VNPay gọi `GET /payments/vnpay/ipn` về backend.
-5. Backend:
-   - verify checksum,
-   - tìm transaction theo `vnp_TxnRef`,
-   - kiểm tra amount khớp,
-   - cập nhật transaction `SUCCESS` hoặc `FAILED`.
-6. Nếu giao dịch thành công và số tiền đã trả đủ, order chuyển sang `PAID`.
-7. Browser của user được redirect về frontend qua `GET /payments/vnpay/return`. 
+### 5.3. Bước 3: Người dùng thêm thiết bị vào giỏ thuê
 
-### 5.6. Giai đoạn 6: Consent chính sách và tạo hợp đồng
-1. Admin tạo `PolicyDocument` theo `code` và `version`.
-2. User đọc policy latest theo code.
-3. User thực hiện consent qua `POST /policies/{policyId}/consent`.
-4. Khi order ở trạng thái `PAID` hoặc `PREPARING`, hệ thống cho phép tạo hợp đồng bằng `POST /contracts/rental-order/{rentalOrderId}`.
-5. Backend kiểm tra:
-   - policy đang active và là bản latest,
-   - user đã có consent `ACCEPTED`,
-   - order chưa có contract trước đó.
-6. Sau khi đạt điều kiện, hệ thống sinh `contractNumber` và lưu `RentalContract`. 
+Khi đã chọn được món phù hợp, người dùng thêm sản phẩm vào giỏ thuê và nhập các thông tin cần thiết như thời gian thuê và số lượng. Hệ thống kiểm tra ngay các điều kiện cơ bản để chặn dữ liệu sai từ sớm. Nếu người dùng thay đổi nhu cầu, họ có thể sửa dòng giỏ, xoá từng dòng hoặc xóa toàn bộ giỏ. 
 
-### 5.7. Giai đoạn 7: Vận hành đơn sau thanh toán
-1. Sau khi thanh toán xong, đơn đi vào flow vận hành nội bộ.
-2. Trạng thái chính của flow:
-   - `PENDING_PAYMENT -> PAID/CANCELLED`
-   - `PAID -> PREPARING -> DELIVERING -> DELIVERED -> IN_USE/PENDING_PICKUP -> PICKING_UP -> PICKED_UP -> INSPECTING -> COMPLETED`
-3. Admin/Staff có thể gán hub và gán nhân sự giao/thu hồi cho đơn.
-4. Khi bắt đầu giao hàng, đơn được đưa vào giai đoạn giao thực tế.
-5. Khi gọi `record-delivery`, inventory item của đơn chuyển từ `RESERVED` sang `RENTED`.
-6. Trong thời gian khách sử dụng, đơn có thể ở trạng thái `IN_USE`.
-7. Khi đến giai đoạn thu hồi, đơn chuyển qua `PENDING_PICKUP` và `PICKING_UP`.
-8. Khi gọi `record-pickup`, inventory item chuyển từ `RENTED` hoặc `RESERVED` về `AVAILABLE`.
-9. Sau đó đơn đi qua bước `INSPECTING`, có thể set penalty nếu phát sinh tổn thất, rồi kết thúc ở `COMPLETED`. 
+### 5.4. Bước 4: Người dùng tạo đơn thuê chính thức
 
-### 5.8. Giai đoạn 8: Hủy đơn
-1. Hệ thống chỉ cho phép hủy đơn ở trạng thái `PENDING_PAYMENT`.
-2. Khi hủy đơn:
-   - inventory đã reserve sẽ được release từ `RESERVED` về `AVAILABLE`,
-   - nếu có voucher thì `usedCount` được giảm lại,
-   - order chuyển sang `CANCELLED`. 
+Sau khi giỏ thuê đã hoàn chỉnh, người dùng gửi yêu cầu tạo đơn. Hệ thống lúc này ghi lại những thông tin quan trọng của đơn, đồng thời tính tiền thuê, tiền giảm giá nếu có voucher và các khoản liên quan khác. Đơn mới tạo sẽ ở trạng thái chờ thanh toán. Đây là bước chuyển từ ý định thuê sang giao dịch thuê chính thức. 
 
-### 5.9. Giai đoạn 9: Đánh giá và hỗ trợ sau thuê
-1. Sau khi order `COMPLETED`, user có thể tạo review cho sản phẩm đã thuê.
-2. Hệ thống chặn review sai quyền hoặc review trùng.
-3. Nếu cần hỗ trợ, user hoặc guest có thể tạo `ContactTicket`.
-4. Staff/Admin phản hồi ticket qua endpoint reply.
-5. Khi xử lý xong, ticket được đóng; ticket đã đóng không thể reply/close tiếp. 
+### 5.5. Bước 5: Hệ thống giữ chỗ món hàng thực tế cho khách
 
-### 5.10. Giai đoạn 10: Quản trị nội bộ và vận hành hệ thống
-1. Admin quản lý user, role, permission.
-2. Admin/Staff quản lý catalog, hub, product, inventory, voucher, policy, order, payment transaction và ticket.
-3. Toàn bộ quyền truy cập endpoint protected được authorize theo permission trong DB. 
+Ngay trong bước tạo đơn, hệ thống chọn và giữ chỗ món hàng thực tế còn khả dụng để tránh bị đặt trùng. Nhờ vậy, một khi khách đã tạo đơn thành công thì hệ thống đã bắt đầu bảo vệ quyền lợi booking của khách trên chính món hàng vật lý phù hợp. Đây là một bước rất quan trọng với mô hình thuê, vì nếu không có giữ chỗ, hệ thống rất dễ xảy ra trùng lịch và sai lệch tồn kho. 
+
+### 5.6. Bước 6: Người dùng thanh toán qua VNPay
+
+Sau khi đơn đã được tạo, khách hàng được chuyển sang bước thanh toán. Hệ thống tạo giao dịch thanh toán riêng cho đơn và chuyển người dùng tới cổng VNPay. Khi VNPay gửi kết quả về, backend sẽ kiểm tra lại rồi mới xác nhận thanh toán thành công. Nếu thanh toán chưa hợp lệ thì đơn chưa được coi là đã trả tiền.
+
+### 5.7. Bước 7: Người dùng xác nhận điều khoản và hệ thống tạo hợp đồng
+
+Sau khi đơn đi đến giai đoạn phù hợp, người dùng phải đồng ý với điều khoản/chính sách áp dụng cho giao dịch thuê. Chỉ khi đã có sự đồng ý hợp lệ và đơn đạt điều kiện, hệ thống mới cho phép tạo hợp đồng. Điều này giúp toàn bộ giao dịch thuê có mức ràng buộc rõ hơn so với mô hình đặt hàng thông thường. 
+
+### 5.8. Bước 8: Doanh nghiệp chuẩn bị đơn và phân công xử lý
+
+Khi đơn đã được thanh toán và đủ điều kiện đi tiếp, khối vận hành nội bộ bắt đầu xử lý. Hệ thống hỗ trợ gán hub, gán nhân sự giao và nhân sự thu hồi cho từng đơn. Điều này giúp chuyển flow từ phần online sang phần vận hành thực tế một cách có tổ chức, thay vì xử lý thủ công bên ngoài hệ thống. 
+
+### 5.9. Bước 9: Giao hàng cho khách
+
+Khi hàng được giao cho khách, hệ thống ghi nhận sự kiện giao hàng. Từ thời điểm này, món hàng được hiểu là đã ra khỏi kho và đi vào giai đoạn sử dụng thực tế của khách. TThời điểm giao hàng còn ảnh hưởng tới thời gian thuê thực tế và mốc kết thúc kỳ thuê dự kiến.
+
+### 5.10. Bước 10: Khách sử dụng thiết bị trong thời gian thuê
+
+Sau khi nhận hàng, khách bước vào giai đoạn sử dụng thiết bị. Trong thời gian này, đơn vẫn tiếp tục được theo dõi trên hệ thống giúp doanh nghiệp biết món hàng đang ở khách, món nào sắp đến hạn và chuẩn bị cho các bước thu hồi hoặc xử lý phát sinh nếu có. 
+
+### 5.11. Bước 11: Gia hạn đơn thuê khi có nhu cầu
+
+Một điểm mới rất đáng chú ý là hệ thống hiện đã có hỗ trợ gia hạn đơn thuê. Khi khách muốn gia hạn thêm thời gian, hệ thống sẽ kiểm tra xem việc kéo dài có làm xung đột với lịch sau đó hay không. Nếu serial hiện tại không còn phù hợp, hệ thống có thể tự tìm serial khác cùng loại để thay thế theo logic ưu tiên hợp lý. Điều này giúp tối ưu trải nghiệm booking mà vẫn bảo vệ quyền lợi của các đơn đã đặt sau. 
+
+### 5.12. Bước 12: Thu hồi lại thiết bị
+
+Khi đến hạn hoặc khi khách kết thúc thời gian thuê, nhân sự vận hành tiến hành thu hồi thiết bị và ghi nhận việc này trên hệ thống. Đây là bước đánh dấu món hàng đã rời khỏi tay khách và quay về trạng thái có thể tiếp tục được theo dõi cho các xử lý tiếp theo. 
+
+### 5.13. Bước 13: Kiểm tra tình trạng hàng và xử lý phát sinh
+
+Sau khi nhận lại thiết bị, doanh nghiệp tiếp tục kiểm tra tình trạng của món hàng. Nếu có hư hại, mất mát hoặc chi phí cần xử lý, hệ thống hỗ trợ cập nhật phần phạt tương ứng. Đây là bước quan trọng để mô hình thuê phản ánh được rủi ro thực tế của tài sản vật lý, chứ không chỉ coi việc nhận hàng về là xong đơn. 
+
+### 5.14. Bước 14: Hoàn tất đơn và mở ra giai đoạn sau thuê
+
+Khi mọi việc đã hoàn thành, đơn được đóng lại ở trạng thái kết thúc. Từ đây, khách hàng có thể để lại đánh giá cho sản phẩm, còn nếu phát sinh vấn đề chưa giải quyết xong thì có thể gửi yêu cầu hỗ trợ. Nhờ vậy, vòng đời của một đơn trong Swiftera không dừng ở bước thanh toán hay giao hàng, mà kéo dài đến cả giai đoạn sau thuê. 
 
 ---
 
 ## <span id="6-vấn-đề-pháp-lý--quản-trị-rủi-ro" style="color:red;">⚖️ 6. Vấn đề Pháp lý & Quản trị rủi ro</span>
 
-Hệ thống hiện tại đã có nhiều ràng buộc pháp lý và kiểm soát rủi ro được suy ra trực tiếp từ code, đặc biệt ở các lớp xác thực tài khoản, consent policy, hợp đồng thuê, thanh toán, tồn kho theo serial, trạng thái đơn thuê và phân quyền endpoint. Nội dung dưới đây bám theo bộ docs hiện tại của backend. 
+Swiftera không chỉ là một hệ thống có chức năng đặt thuê thiết bị, mà còn có cấu trúc kiểm soát rủi ro tương đối rõ cho một mô hình vận hành thật. Các lớp kiểm soát hiện tại thể hiện qua xác thực tài khoản, quản lý điều khoản, hợp đồng, thanh toán, quản lý tài sản theo từng món thực tế, kiểm soát vòng đời đơn và phân quyền nội bộ. 
 
-### 6.1. Xác thực danh tính và bảo mật truy cập
-- Tài khoản phải verify email trước khi có thể sử dụng đầy đủ luồng nghiệp vụ.
-- Mật khẩu bị ràng buộc bởi regex độ mạnh tối thiểu.
-- Access token có hạn sử dụng; logout sẽ blacklist token ở Redis theo TTL còn lại.
-- Refresh token được lưu ở DB và đi kèm cookie HttpOnly/Secure/SameSite=None.
-- Các endpoint protected yêu cầu JWT hợp lệ. 
+### 6.1. Kiểm soát danh tính người dùng và quyền truy cập
 
-### 6.2. Ràng buộc dữ liệu người dùng
-- Email và phone được kiểm soát unique ở tầng service và DB.
-- Số điện thoại đi theo chuẩn VN.
-- Profile có ràng buộc độ dài và kiểm soát cập nhật.
-- Một số account hệ thống có rule bảo vệ không cho cập nhật/xóa tùy ý. :contentReference[oaicite:26]{index=26}
+Một giao dịch thuê tài sản sẽ rất rủi ro nếu không gắn với tài khoản cụ thể và không kiểm soát quyền truy cập. Hệ thống hiện yêu cầu người dùng xác thực email, hỗ trợ quản lý phiên đăng nhập, và phân chia rõ quyền của khách hàng, nhân sự vận hành và quản trị viên. Điều này giúp giảm các rủi ro như truy cập trái quyền, thao tác nhầm vai trò hoặc dữ liệu đơn hàng gắn sai người. 
 
-### 6.3. Consent policy và cơ sở ràng buộc điều khoản
-- `PolicyDocument` quản lý chính sách theo `code/version` và trạng thái active.
-- `UserConsent` là bằng chứng user đã chấp thuận policy.
-- Muốn tạo hợp đồng, user phải consent policy latest đang active.
-- `UserConsent` hiện lưu `ipAddress` và `userAgent`, tạo cơ sở chứng minh việc đồng ý điều khoản trước khi phát hành contract. 
+### 6.2. Kiểm soát điều khoản và sự đồng ý của khách hàng
 
-### 6.4. Hợp đồng thuê và ràng buộc ký kết
-- Hợp đồng chỉ được tạo khi order ở trạng thái `PAID` hoặc `PREPARING`.
-- Mỗi order chỉ có một contract.
-- Contract gắn với policy đang hiệu lực và user đã consent hợp lệ.
-- Contract lưu metadata xác nhận như IP/User-Agent và định danh nghiệp vụ `contractNumber`. 
+Một điểm rất quan trọng của hệ thống là không cho tạo hợp đồng tuỳ tiện. Người dùng phải có bước đồng ý với điều khoản/chính sách trước, và việc đồng ý đó được lưu lại trong hệ thống để làm cơ sở đối chiếu sau này. Trong mô hình thuê thiết bị, đây là một lớp bảo vệ rất có giá trị vì tranh chấp thường không chỉ nằm ở chuyện “đã đặt hàng chưa”, mà còn nằm ở chuyện “đã đồng ý với điều khoản xử lý trách nhiệm hay chưa”. 
 
-### 6.5. Kiểm soát thanh toán và đối soát giao dịch
-- Mọi thanh toán được tách riêng khỏi order thông qua `PaymentTransaction`.
-- Callback VNPay phải verify checksum và amount trước khi xác nhận thành công.
-- Chỉ khi transaction thành công và đủ tiền thì order mới được đẩy sang `PAID`.
-- Các mã giao dịch từ gateway được lưu để audit và reconcile. 
+### 6.3. Kiểm soát hợp đồng thuê
 
-### 6.6. Kiểm soát vòng đời đơn thuê
-- State machine kiểm soát việc chuyển trạng thái order.
-- Chỉ cho phép hủy đơn ở `PENDING_PAYMENT`.
-- Các thao tác giao/nhận tác động trực tiếp đến trạng thái inventory.
-- Có cơ chế `set-penalty` để xử lý tình huống hư hại, mất mát hoặc chi phí bồi thường. 
+Hệ thống hiện chỉ cho tạo hợp đồng khi đơn đã đạt tới giai đoạn phù hợp và mỗi đơn chỉ được gắn với một hợp đồng. Điều này giúp tránh tạo hợp đồng sai thời điểm hoặc tạo chồng chéo nhiều hợp đồng cho cùng một giao dịch. Nếu nhìn dưới góc độ quản trị, đây là cách làm phù hợp để giữ cho quan hệ thuê giữa doanh nghiệp và khách hàng có cấu trúc rõ ràng hơn. 
 
-### 6.7. Kiểm soát tài sản và chống overbooking
-- Tài sản vật lý được quản lý theo từng serial inventory item.
-- Inventory được reserve ngay khi tạo đơn để tránh trùng lịch cùng một serial.
-- Khi hủy đơn, inventory được release.
-- Khi giao/thu hồi, trạng thái item được cập nhật tương ứng giữa `RESERVED`, `RENTED` và `AVAILABLE`.
-- Đây là lớp kiểm soát nghiệp vụ rất quan trọng đối với mô hình cho thuê tài sản vật lý. 
+### 6.4. Kiểm soát thanh toán và khả năng đối soát
 
-### 6.8. Ràng buộc voucher và khuyến mại
-- Voucher có thời gian hiệu lực, usage limit, min rental days và giới hạn mức giảm.
-- Voucher được validate theo bối cảnh đơn thuê, gồm ngày thuê và subtotal.
-- `usedCount` tăng/giảm theo lifecycle đơn để giảm sai lệch số lượt sử dụng. 
+Thanh toán là một vùng rủi ro lớn vì chỉ cần xác nhận sai là toàn bộ quy trình vận hành sau đó có thể sai theo. Hệ thống hiện tách riêng giao dịch thanh toán, kiểm tra lại dữ liệu trả về từ VNPay và chỉ khi dữ liệu hợp lệ mới xác nhận đơn đã được thanh toán. Cách tổ chức này giúp giảm sai sót và giúp doanh nghiệp dễ đối chiếu hơn về sau nếu có sự cố. 
 
-### 6.9. Ràng buộc review, ticket và quyền thao tác
-- Chỉ user sở hữu order hoàn tất mới được review sản phẩm.
-- Mỗi tổ hợp `(order, user, product)` chỉ được một review.
-- Ticket đã đóng không thể reply/close lại.
-- Đây là các ràng buộc giúp hạn chế spam, thao tác sai quyền và dữ liệu phản hồi không hợp lệ. 
+### 6.5. Kiểm soát tài sản thực tế để tránh đặt trùng và thất thoát
 
-### 6.10. Ràng buộc phân quyền nội bộ
-- Endpoint protected yêu cầu JWT hợp lệ và permission phù hợp theo DB.
-- Role là tập permission, không hard-code toàn bộ quyền trực tiếp vào role ở code.
-- Một số endpoint public được allowlist cho browse, auth và callback thanh toán.
-- Nếu `Permission.apiPath` không khớp route thực tế, quyền hợp lệ có thể vẫn bị từ chối, nên đây là một điểm cần kiểm soát rất kỹ khi vận hành. 
+Với mô hình cho thuê, rủi ro rất lớn nằm ở việc không biết chính xác món hàng nào đang ở đâu. Swiftera hiện đã đi đúng hướng khi quản lý từng món hàng vật lý riêng biệt và giữ chỗ món hàng ngay từ lúc tạo đơn. Nhờ vậy, hệ thống hạn chế được việc nhiều khách đặt trùng cùng một món thực tế, đồng thời giúp doanh nghiệp theo dõi được món nào đang rảnh, món nào đã giữ chỗ và món nào đang ở khách. 
 
-### 6.11. Ràng buộc validation đầu vào
-- Request DTO áp dụng Jakarta Validation.
-- Global exception handler trả lỗi field-level thống nhất.
-- Ngoài validation annotation, tầng service còn kiểm tra thêm các rule nghiệp vụ như:
-  - duplicate,
-  - ownership,
-  - state transition,
-  - điều kiện hợp đồng,
-  - điều kiện voucher,
-  - điều kiện review/ticket. 
+### 6.6. Kiểm soát lịch thuê và gia hạn
 
-### 6.12. Rủi ro kỹ thuật và kiểm soát vận hành cần lưu ý
-- Có rủi ro race condition khi reserve/release inventory nếu tải cao hoặc nhiều request đồng thời.
-- Callback VNPay cần idempotent và chống replay tốt hơn để tránh ghi nhận trùng.
-- Việc mapping permission path không khớp route có thể gây lỗi 403 ngoài kỳ vọng.
-- Cần rà soát kỹ các mapper ignore field để tránh frontend thiếu dữ liệu cần thiết.
-- Cần kiểm tra lại đường dẫn Liquibase changelog và changesets giữa các thư mục resources để tránh mismatch khi chạy migration. 
+Khi hệ thống bắt đầu hỗ trợ gia hạn đơn thuê, rủi ro mới xuất hiện là xung đột lịch giữa đơn hiện tại và đơn đặt sau. Tài liệu API mới cho thấy hệ thống đã xử lý theo hướng kiểm tra xung đột trước, và nếu cần thì tự tìm món khác cùng loại để thay thế. Đây là một hướng rất hợp lý vì nó vừa bảo vệ booking của khách đang thuê, vừa tránh ảnh hưởng đến các booking đã có sau đó. 
 
-### 6.13. Hướng hoàn thiện để tăng mức pháp lý và audit
-- Tăng độ tin cậy metadata IP trong `UserConsent` bằng cơ chế trusted proxy rõ ràng hơn.
-- Chuẩn hóa render/hash tài liệu policy để tăng khả năng chống tranh chấp phiên bản.
-- Cân nhắc bổ sung audit trail chi tiết hơn cho thay đổi trạng thái order/inventory.
-- Có thể bổ sung idempotency key cho các endpoint nhạy cảm liên quan thanh toán hoặc thao tác nghiệp vụ quan trọng. :contentReference[oaicite:37]{index=37}
+### 6.7. Kiểm soát giao hàng, thu hồi và xử lý hư hại
+
+Hệ thống không xem việc khách đặt thuê thành công là kết thúc, mà tiếp tục theo dõi món hàng qua các bước giao, sử dụng, thu hồi và kiểm tra lại. Điều này giúp giảm rủi ro thất thoát, thất lạc hoặc “quên trạng thái” của thiết bị. Sau khi nhận lại hàng, hệ thống còn cho phép xử lý khoản phạt nếu phát sinh hư hại hoặc mất mát. Đây là điểm rất quan trọng với bài toán thuê tài sản thật. 
+
+### 6.8. Kiểm soát khuyến mại và hạn chế sai lệch khi dùng voucher
+
+Khuyến mại nếu không kiểm soát kỹ rất dễ gây thất thoát hoặc tạo tranh cãi với khách hàng. Swiftera hiện đã gắn voucher với các điều kiện cụ thể như còn hạn, còn lượt sử dụng, đủ điều kiện áp dụng hay không, và khi đơn bị hủy thì số lượt dùng cũng được điều chỉnh lại. Điều này giúp phần khuyến mại đi vào đúng logic vận hành thay vì chỉ là tính năng trình bày ở giao diện. 
+
+### 6.9. Kiểm soát phản hồi, đánh giá và hỗ trợ sau thuê
+
+Hệ thống chỉ cho khách đã hoàn tất thuê mới được đánh giá sản phẩm, giúp phần review có giá trị thực tế hơn. Đồng thời, yêu cầu hỗ trợ sau bán được đưa vào dạng ticket có phản hồi và đóng xử lý rõ ràng. Điều này giúp dữ liệu sau thuê không bị lộn xộn và tạo ra một cơ chế theo dõi phản hồi có tổ chức hơn cho doanh nghiệp. 
+
+### 6.10. Kiểm soát phân quyền nội bộ và rủi ro thao tác sai
+
+Một hệ thống có nhiều vai trò nội bộ rất dễ phát sinh rủi ro nếu quyền hạn không khớp với chức năng thực tế. Tài liệu hiện tại cho thấy backend đang kiểm soát quyền theo endpoint, giúp giới hạn khá rõ ai được làm gì. Điều này đặc biệt quan trọng với những thao tác nhạy cảm như quản lý đơn, thay đổi trạng thái, xử lý thanh toán, quản lý sản phẩm hoặc chỉnh sửa dữ liệu chính sách. 
+
+### 6.11. Các rủi ro kỹ thuật vẫn cần tiếp tục hoàn thiện
+
+Vẫn còn các vùng cần tiếp tục siết chặt thêm, như xử lý tình huống đồng thời khi nhiều thao tác cùng xảy ra, kiểm soát callback thanh toán lặp, bảo đảm đồng bộ quyền truy cập và tăng kiểm thử cho các luồng quan trọng. Điều này cho thấy hệ thống đã có tư duy nhận diện rủi ro tương đối rõ, và phần còn lại chủ yếu là làm hệ thống vững hơn khi đi vào vận hành lớn. 
 
 ---
 
